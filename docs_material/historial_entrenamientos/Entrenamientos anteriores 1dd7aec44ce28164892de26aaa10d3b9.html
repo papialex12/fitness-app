@@ -1,0 +1,714 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Entrenamientos anteriores</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1dd7aec4-4ce2-8164-892d-e26aaa10d3b9" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">🗃️</span></div><h1 class="page-title" dir="auto">Entrenamientos anteriores</h1><p class="page-description" dir="auto"></p></header><div class="page-body"><div style="display:contents" dir="ltr"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1dd7aec4-4ce2-81ef-9401-c24ce7774f25"><div style="font-size:1.5em"><span class="icon">👉</span></div><div style="width:100%">Esta es una Tabla Relacionada del sistema de &quot;Tareas Diarias&quot;, aquí verás un filtro que sólo mostrará las tareas diarias que has completado en el pasado, organizadas por fecha.</div></figure></div><div style="display:contents" dir="ltr"><div id="1dd7aec4-4ce2-81f9-808a-db523dc5b448" class="collection-content"><h4 class="collection-title">Diario de entrenamiento</h4><table class="collection-content"><thead><tr><th><span class="icon property-icon"><img src="https://www.notion.so/icons/font_gray.svg" style="width:14px;height:14px;display:block"/></span>Fecha de Lista</th><th><span class="icon property-icon"><img src="https://www.notion.so/icons/checkmark-square_gray.svg" style="width:14px;height:14px;display:block"/></span>Archivar</th><th><span class="icon property-icon"><img src="https://www.notion.so/icons/calendar_gray.svg" style="width:14px;height:14px;display:block"/></span>Fecha</th><th><span class="icon property-icon"><img src="https://www.notion.so/icons/clock_gray.svg" style="width:14px;height:14px;display:block"/></span>Creada</th><th><span class="icon property-icon"><img src="https://www.notion.so/icons/arrow-circle-down_gray.svg" style="width:14px;height:14px;display:block"/></span>Agujetas (general)</th><th><span class="icon property-icon"><img src="https://www.notion.so/icons/arrow-circle-down_gray.svg" style="width:14px;height:14px;display:block"/></span>Calidad de Sueño</th><th><span class="icon property-icon"><img src="https://www.notion.so/icons/clock_gray.svg" style="width:14px;height:14px;display:block"/></span>Duración (minutos)</th><th><span class="icon property-icon"><img src="https://www.notion.so/icons/arrow-circle-down_gray.svg" style="width:14px;height:14px;display:block"/></span>Estado de ánimo</th><th><span class="icon property-icon"><img src="https://www.notion.so/icons/arrow-circle-down_gray.svg" style="width:14px;height:14px;display:block"/></span>Nivel de estrés</th><th><span class="icon property-icon"><img src="https://www.notion.so/icons/arrow-circle-down_gray.svg" style="width:14px;height:14px;display:block"/></span>RPE SESION</th><th><span class="icon property-icon"><img src="https://www.notion.so/icons/description_gray.svg" style="width:14px;height:14px;display:block"/></span>Reflexion</th><th><span class="icon property-icon"><img src="https://www.notion.so/icons/arrow-circle-down_gray.svg" style="width:14px;height:14px;display:block"/></span>Tipo de Entrenamiento</th></tr></thead><tbody><tr id="2307aec4-4ce2-8067-adca-fd61e717562e"><td class="cell-title"><a href="Empuje%2011%202307aec44ce28067adcafd61e717562e.html">Empuje 11</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@14 de julio de 2025 20:45</time></td><td class="cell-gcyK"></td><td class="cell-NZde"></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"></td></tr><tr id="22b7aec4-4ce2-81a3-885b-c1adb1f62ac7"><td class="cell-title"><a href="Pata%2010%20con%20jordan%2022b7aec44ce281a3885bc1adb1f62ac7.html">Pata 10 con jordan</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@10 de julio de 2025 0:14</time></td><td class="cell-gcyK"></td><td class="cell-NZde"></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"></td></tr><tr id="22a7aec4-4ce2-81cf-97bc-c42683b82e8a"><td class="cell-title"><a href="Descanso%20activo%2022a7aec44ce281cf97bcc42683b82e8a.html">Descanso activo </a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@9 de julio de 2025 0:06</time></td><td class="cell-gcyK"></td><td class="cell-NZde"></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"></td></tr><tr id="2287aec4-4ce2-8124-a839-f6a08692cae4"><td class="cell-title"><a href="Empuje%2010%202287aec44ce28124a839f6a08692cae4.html">Empuje 10</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@7 de julio de 2025 0:02</time></td><td class="cell-gcyK"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-NZde"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-`zrP">50</td><td class="cell-gb=H"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-wMjs"><span class="selected-value select-value-color-blue">Regular</span></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"><span class="selected-value select-value-color-green">Hipertrofia</span></td></tr><tr id="2277aec4-4ce2-819d-bffe-fe7437e4dad1"><td class="cell-title"><a href="Cadena%20posterior%202277aec44ce2819dbffefe7437e4dad1.html">Cadena posterior</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@6 de julio de 2025 0:08</time></td><td class="cell-gcyK"></td><td class="cell-NZde"></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"><span class="selected-value select-value-color-green">Hipertrofia</span></td></tr><tr id="2257aec4-4ce2-8105-8dd6-cfbdc3557aaa"><td class="cell-title"><a href="Torso%209%20xfin%202257aec44ce281058dd6cfbdc3557aaa.html">Torso 9 xfin</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@4 de julio de 2025 0:01</time></td><td class="cell-gcyK"></td><td class="cell-NZde"><span class="selected-value select-value-color-blue">Regular</span></td><td class="cell-`zrP">50</td><td class="cell-gb=H"><span class="selected-value select-value-color-green">Muy bien</span></td><td class="cell-wMjs"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"><span class="selected-value select-value-color-green">Hipertrofia</span></td></tr><tr id="2247aec4-4ce2-819c-af26-e7491cfe3814"><td class="cell-title"><a href="Pierna%209%202247aec44ce2819caf26e7491cfe3814.html">Pierna 9</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@3 de julio de 2025 0:03</time></td><td class="cell-gcyK"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-NZde"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"><span class="selected-value select-value-color-gray">Mal</span></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"><span class="selected-value select-value-color-green">Hipertrofia</span></td></tr><tr id="2227aec4-4ce2-81f4-b8ae-e097b4e8f8f1"><td class="cell-title"><a href="Cadena%20posterior%209%202227aec44ce281f4b8aee097b4e8f8f1.html">Cadena posterior 9</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@1 de julio de 2025 0:22</time></td><td class="cell-gcyK"><span class="selected-value select-value-color-blue">Regular</span></td><td class="cell-NZde"><span class="selected-value select-value-color-blue">Regular</span></td><td class="cell-`zrP">50</td><td class="cell-gb=H"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-wMjs"><span class="selected-value select-value-color-blue">Regular</span></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"></td></tr><tr id="2217aec4-4ce2-8131-b811-fdd8f5e0050e"><td class="cell-title"><a href="Empuje%209%20%C3%A9nfasis%20pecho%202217aec44ce28131b811fdd8f5e0050e.html">Empuje 9 énfasis pecho</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@30 de junio de 2025 0:03</time></td><td class="cell-gcyK"></td><td class="cell-NZde"></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"></td></tr><tr id="21f7aec4-4ce2-81dc-8ab6-c3ba3c5ffcd9"><td class="cell-title"><a href="Espalda%20-%20no%20haces%20torso%20por%20ma%C3%B1ana%2021f7aec44ce281dc8ab6c3ba3c5ffcd9.html">Espalda - no haces torso por mañana</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@28 de junio de 2025 0:06</time></td><td class="cell-gcyK"></td><td class="cell-NZde"></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"></td></tr><tr id="21d7aec4-4ce2-812e-95c3-dbf138507bf8"><td class="cell-title"><a href="Pata%208%20Cambiar%2021d7aec44ce2812e95c3dbf138507bf8.html">Pata 8 Cambiar</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@26 de junio de 2025 0:06</time></td><td class="cell-gcyK"></td><td class="cell-NZde"></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"></td></tr><tr id="21b7aec4-4ce2-81ba-bed2-eb5d788e9f4d"><td class="cell-title"><a href="Cadena%20posterior%20fast%2021b7aec44ce281babed2eb5d788e9f4d.html">Cadena posterior fast</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@24 de junio de 2025 0:15</time></td><td class="cell-gcyK"></td><td class="cell-NZde"></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"><span class="selected-value select-value-color-green">Hipertrofia</span></td></tr><tr id="21a7aec4-4ce2-8196-ba6a-fca3d2548e56"><td class="cell-title"><a href="Empuje%208%2021a7aec44ce28196ba6afca3d2548e56.html">Empuje 8</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@23 de junio de 2025 0:11</time></td><td class="cell-gcyK"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-NZde"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-`zrP">50</td><td class="cell-gb=H"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-wMjs"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"><span class="selected-value select-value-color-green">Hipertrofia</span></td></tr><tr id="2187aec4-4ce2-8135-a050-d9f9248774c8"><td class="cell-title"><a href="Torso%208%202187aec44ce28135a050d9f9248774c8.html">Torso 8</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@21 de junio de 2025 0:17</time></td><td class="cell-gcyK"></td><td class="cell-NZde"></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"></td></tr><tr id="2177aec4-4ce2-81c2-8ebe-e86c27b966bf"><td class="cell-title"><a href="Pata%207%202177aec44ce281c28ebee86c27b966bf.html">Pata 7</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@20 de junio de 2025 0:12</time></td><td class="cell-gcyK"></td><td class="cell-NZde"><span class="selected-value select-value-color-green">Muy bien</span></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"><span class="selected-value select-value-color-green">Hipertrofia</span></td></tr><tr id="2157aec4-4ce2-8110-981e-e6bc962da86b"><td class="cell-title"><a href="Cadena%20posterior%207%202157aec44ce28110981ee6bc962da86b.html">Cadena posterior 7</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@18 de junio de 2025 0:07</time></td><td class="cell-gcyK"></td><td class="cell-NZde"><span class="selected-value select-value-color-green">Muy bien</span></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"><span class="selected-value select-value-color-blue">Regular</span></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"><span class="selected-value select-value-color-green">Hipertrofia</span></td></tr><tr id="2147aec4-4ce2-81e7-9225-f5a996afc32e"><td class="cell-title"><a href="Empuje%207%202147aec44ce281e79225f5a996afc32e.html">Empuje 7</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@17 de junio de 2025 0:02</time></td><td class="cell-gcyK"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-NZde"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-`zrP">50</td><td class="cell-gb=H"><span class="selected-value select-value-color-blue">Regular</span></td><td class="cell-wMjs"><span class="selected-value select-value-color-blue">Regular</span></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"><span class="selected-value select-value-color-green">Hipertrofia</span></td></tr><tr id="2107aec4-4ce2-8132-ab13-f3bc2fda2c5c"><td class="cell-title"><a href="Pata%206%202107aec44ce28132ab13f3bc2fda2c5c.html">Pata 6</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@13 de junio de 2025 0:14</time></td><td class="cell-gcyK"></td><td class="cell-NZde"></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"></td></tr><tr id="20f7aec4-4ce2-8126-a6bc-d063d9b2b808"><td class="cell-title"><a href="Plantilla%20para%20entrenos%2020f7aec44ce28126a6bcd063d9b2b808.html">Plantilla para entrenos</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@12 de junio de 2025 0:06</time></td><td class="cell-gcyK"></td><td class="cell-NZde"></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"></td></tr><tr id="20e7aec4-4ce2-8189-afb5-eae52cc24d63"><td class="cell-title"><a href="Plantilla%20para%20entrenos%2020e7aec44ce28189afb5eae52cc24d63.html">Plantilla para entrenos</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@11 de junio de 2025 0:01</time></td><td class="cell-gcyK"></td><td class="cell-NZde"></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"></td></tr><tr id="20d7aec4-4ce2-8177-8f27-f8e367a01e52"><td class="cell-title"><a href="Cadena%20posterior%206%2020d7aec44ce281778f27f8e367a01e52.html">Cadena posterior 6</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@10 de junio de 2025 0:07</time></td><td class="cell-gcyK"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-NZde"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-`zrP">50</td><td class="cell-gb=H"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-wMjs"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"><span class="selected-value select-value-color-green">Hipertrofia</span></td></tr><tr id="20c7aec4-4ce2-81cd-b15a-c168232b5061"><td class="cell-title"><a href="Empuje%206%2020c7aec44ce281cdb15ac168232b5061.html">Empuje 6</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@9 de junio de 2025 0:07</time></td><td class="cell-gcyK"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-NZde"><span class="selected-value select-value-color-gray">Mal</span></td><td class="cell-`zrP">50</td><td class="cell-gb=H"><span class="selected-value select-value-color-green">Muy bien</span></td><td class="cell-wMjs"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-AeU&lt;"><span class="selected-value select-value-color-green">Algo dura</span></td><td class="cell-[{WT"></td><td class="cell-DfGB"><span class="selected-value select-value-color-green">Hipertrofia</span></td></tr><tr id="20a7aec4-4ce2-8100-96d6-cd81819c18cd"><td class="cell-title"><a href="Torso%205%2020a7aec44ce2810096d6cd81819c18cd.html">Torso 5</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@7 de junio de 2025 0:03</time></td><td class="cell-gcyK"><span class="selected-value select-value-color-purple">Muy muy mal</span></td><td class="cell-NZde"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-`zrP">50</td><td class="cell-gb=H"><span class="selected-value select-value-color-blue">Regular</span></td><td class="cell-wMjs"><span class="selected-value select-value-color-gray">Mal</span></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"><span class="selected-value select-value-color-green">Hipertrofia</span></td></tr><tr id="2087aec4-4ce2-81f7-999b-e2e9c324409e"><td class="cell-title"><a href="Torso%206%202087aec44ce281f7999be2e9c324409e.html">Torso 6</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@5 de junio de 2025 0:14</time></td><td class="cell-gcyK"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-NZde"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-`zrP">50</td><td class="cell-gb=H"><span class="selected-value select-value-color-red">Muy muy bien</span></td><td class="cell-wMjs"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-AeU&lt;"><span class="selected-value select-value-color-green">Algo dura</span></td><td class="cell-[{WT"></td><td class="cell-DfGB"><span class="selected-value select-value-color-green">Hipertrofia</span></td></tr><tr id="2067aec4-4ce2-8197-ae3f-fc812dfe349f"><td class="cell-title"><a href="Cadena%20posterior%205%20bloque%20nuevo%202067aec44ce28197ae3ffc812dfe349f.html">Cadena posterior 5 bloque nuevo</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@3 de junio de 2025 0:10</time></td><td class="cell-gcyK"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-NZde"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-`zrP">50</td><td class="cell-gb=H"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-wMjs"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-AeU&lt;"><span class="selected-value select-value-color-green">Algo dura</span></td><td class="cell-[{WT">Dolor rodilla se intensificación en mañan</td><td class="cell-DfGB"><span class="selected-value select-value-color-green">Hipertrofia</span></td></tr><tr id="2057aec4-4ce2-8187-a0e2-e8d7f176fd18"><td class="cell-title"><a href="Empuje%205%20nuevo%20bloque%202057aec44ce28187a0e2e8d7f176fd18.html">Empuje 5 nuevo bloque </a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@2 de junio de 2025 0:15</time></td><td class="cell-gcyK"><span class="selected-value select-value-color-green">Muy bien</span></td><td class="cell-NZde"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-`zrP">100</td><td class="cell-gb=H"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-wMjs"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-AeU&lt;"><span class="selected-value select-value-color-green">Algo dura</span></td><td class="cell-[{WT">Buen entreno te sientes enorme</td><td class="cell-DfGB"><span class="selected-value select-value-color-green">Hipertrofia</span></td></tr><tr id="1ff7aec4-4ce2-8125-b2a4-e95544df5cfb"><td class="cell-title"><a href="Fullbody%20t%C3%A9cnico%20ligero%20pre%20partido%201ff7aec44ce28125b2a4e95544df5cfb.html">Fullbody técnico ligero pre partido </a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@27 de mayo de 2025 0:17</time></td><td class="cell-gcyK"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-NZde"><span class="selected-value select-value-color-green">Muy bien</span></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"><span class="selected-value select-value-color-blue">Regular</span></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"><span class="selected-value select-value-color-orange">Rugby Acondicionamiento</span></td></tr><tr id="1fc7aec4-4ce2-812c-a192-d69d0ed24a71"><td class="cell-title"><a href="Pecho%20espalda%204%201fc7aec44ce2812ca192d69d0ed24a71.html">Pecho espalda 4</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@24 de mayo de 2025 0:08</time></td><td class="cell-gcyK"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-NZde"><span class="selected-value select-value-color-green">Muy bien</span></td><td class="cell-`zrP">50</td><td class="cell-gb=H"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-wMjs"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"><span class="selected-value select-value-color-green">Hipertrofia</span></td></tr><tr id="1fb7aec4-4ce2-817e-8d9c-e4d67ff7c2f9"><td class="cell-title"><a href="Pata%204%201fb7aec44ce2817e8d9ce4d67ff7c2f9.html">Pata 4</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@23 de mayo de 2025 0:10</time></td><td class="cell-gcyK"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-NZde"><span class="selected-value select-value-color-gray">Mal</span></td><td class="cell-`zrP">50</td><td class="cell-gb=H"><span class="selected-value select-value-color-blue">Regular</span></td><td class="cell-wMjs"><span class="selected-value select-value-color-blue">Regular</span></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"><span class="selected-value select-value-color-brown">Fuerza</span></td></tr><tr id="1f97aec4-4ce2-8183-bf76-f0aa186ce80b"><td class="cell-title"><a href="Cadena%20posterior%204%201f97aec44ce28183bf76f0aa186ce80b.html">Cadena posterior 4</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"><time>@21 de mayo de 2025</time></td><td class="cell-sKaa"><time>@21 de mayo de 2025 0:06</time></td><td class="cell-gcyK"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-NZde"><span class="selected-value select-value-color-gray">Mal</span></td><td class="cell-`zrP">50</td><td class="cell-gb=H"><span class="selected-value select-value-color-green">Muy bien</span></td><td class="cell-wMjs"><span class="selected-value select-value-color-blue">Regular</span></td><td class="cell-AeU&lt;"><span class="selected-value select-value-color-pink">Difícil</span></td><td class="cell-[{WT"></td><td class="cell-DfGB"><span class="selected-value select-value-color-brown">Fuerza</span></td></tr><tr id="1f87aec4-4ce2-8194-a393-f9dae59c1df7"><td class="cell-title"><a href="Empuje%204%201f87aec44ce28194a393f9dae59c1df7.html">Empuje 4</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"><time>@20 de mayo de 2025</time></td><td class="cell-sKaa"><time>@20 de mayo de 2025 0:09</time></td><td class="cell-gcyK"></td><td class="cell-NZde"><span class="selected-value select-value-color-blue">Regular</span></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"><span class="selected-value select-value-color-brown">Fuerza</span></td></tr><tr id="1f77aec4-4ce2-81e7-897c-fb326bb9cb77"><td class="cell-title"><a href="Plantilla%20para%20entrenos%201f77aec44ce281e7897cfb326bb9cb77.html">Plantilla para entrenos</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@19 de mayo de 2025 0:11</time></td><td class="cell-gcyK"></td><td class="cell-NZde"></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"></td></tr><tr id="1f67aec4-4ce2-8198-9965-fdc777c51bcd"><td class="cell-title"><a href="Plantilla%20para%20entrenos%201f67aec44ce281989965fdc777c51bcd.html">Plantilla para entrenos</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@18 de mayo de 2025 0:18</time></td><td class="cell-gcyK"></td><td class="cell-NZde"></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"></td></tr><tr id="1f57aec4-4ce2-81a5-a986-f6259ce7fe76"><td class="cell-title"><a href="Pecho%20espalda%203%201f57aec44ce281a5a986f6259ce7fe76.html">Pecho espalda 3</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@17 de mayo de 2025 0:13</time></td><td class="cell-gcyK"></td><td class="cell-NZde"><span class="selected-value select-value-color-blue">Regular</span></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"></td></tr><tr id="1f47aec4-4ce2-81e0-934c-ce123940477a"><td class="cell-title"><a href="Pata%203%201f47aec44ce281e0934cce123940477a.html">Pata 3</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"><time>@16 de mayo de 2025</time></td><td class="cell-sKaa"><time>@16 de mayo de 2025 0:09</time></td><td class="cell-gcyK"><span class="selected-value select-value-color-green">Muy bien</span></td><td class="cell-NZde"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-`zrP">50</td><td class="cell-gb=H"><span class="selected-value select-value-color-red">Muy muy bien</span></td><td class="cell-wMjs"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"><span class="selected-value select-value-color-brown">Fuerza</span></td></tr><tr id="1f37aec4-4ce2-812b-9dad-c772cbdfddea"><td class="cell-title"><a href="Plantilla%20para%20entrenos%201f37aec44ce2812b9dadc772cbdfddea.html">Plantilla para entrenos</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@15 de mayo de 2025 0:15</time></td><td class="cell-gcyK"></td><td class="cell-NZde"></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"></td></tr><tr id="1f27aec4-4ce2-817c-8ded-fb505f1edd25"><td class="cell-title"><a href="Plantilla%20para%20entrenos%201f27aec44ce2817c8dedfb505f1edd25.html">Plantilla para entrenos</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@14 de mayo de 2025 0:10</time></td><td class="cell-gcyK"></td><td class="cell-NZde"></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"></td></tr><tr id="1f17aec4-4ce2-81b0-9c9b-f51bb878f419"><td class="cell-title"><a href="Plantilla%20para%20entrenos%201f17aec44ce281b09c9bf51bb878f419.html">Plantilla para entrenos</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@13 de mayo de 2025 0:08</time></td><td class="cell-gcyK"></td><td class="cell-NZde"></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"></td></tr><tr id="1f07aec4-4ce2-8197-af81-cf51f89ed933"><td class="cell-title"><a href="Empuje%203%201f07aec44ce28197af81cf51f89ed933.html">Empuje 3</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"><time>@13 de mayo de 2025</time></td><td class="cell-sKaa"><time>@12 de mayo de 2025 0:00</time></td><td class="cell-gcyK"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-NZde"><span class="selected-value select-value-color-green">Muy bien</span></td><td class="cell-`zrP">50</td><td class="cell-gb=H"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-wMjs"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"><span class="selected-value select-value-color-green">Hipertrofia</span></td></tr><tr id="1ef7aec4-4ce2-8129-9583-ee57702b063b"><td class="cell-title"><a href="Plantilla%20para%20entrenos%201ef7aec44ce281299583ee57702b063b.html">Plantilla para entrenos</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@11 de mayo de 2025 0:14</time></td><td class="cell-gcyK"></td><td class="cell-NZde"></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"></td></tr><tr id="1ef7aec4-4ce2-8070-8647-d813872db1f6"><td class="cell-title"><a href="Entreno%20pecho%20espalda%201ef7aec44ce280708647d813872db1f6.html">Entreno pecho espalda</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"><time>@10 de mayo de 2025</time></td><td class="cell-sKaa"><time>@10 de mayo de 2025 19:11</time></td><td class="cell-gcyK"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-NZde"><span class="selected-value select-value-color-purple">Muy muy mal</span></td><td class="cell-`zrP">50</td><td class="cell-gb=H"><span class="selected-value select-value-color-blue">Regular</span></td><td class="cell-wMjs"><span class="selected-value select-value-color-blue">Regular</span></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT">Te duermes a la 4 y te despiertas a las 10 y pico</td><td class="cell-DfGB"><span class="selected-value select-value-color-green">Hipertrofia</span></td></tr><tr id="1ee7aec4-4ce2-817d-bcf2-dc6db55dd7af"><td class="cell-title"><a href="Cadena%20posterior%203%201ee7aec44ce2817dbcf2dc6db55dd7af.html">Cadena posterior 3</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@10 de mayo de 2025 0:16</time></td><td class="cell-gcyK"></td><td class="cell-NZde"></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"></td></tr><tr id="1eb7aec4-4ce2-80ec-8fb6-eb8ea0015ae6"><td class="cell-title"><a href="Empuje%202%201eb7aec44ce280ec8fb6eb8ea0015ae6.html">Empuje 2</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@6 de mayo de 2025 21:29</time></td><td class="cell-gcyK"></td><td class="cell-NZde"></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"></td></tr><tr id="1eb7aec4-4ce2-80f7-90ff-dee13e693545"><td class="cell-title"><a href="Empuje%202%201eb7aec44ce280f790ffdee13e693545.html">Empuje 2</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@6 de mayo de 2025 21:07</time></td><td class="cell-gcyK"><span class="selected-value select-value-color-green">Muy bien</span></td><td class="cell-NZde"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-`zrP">50</td><td class="cell-gb=H"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-wMjs"><span class="selected-value select-value-color-blue">Regular</span></td><td class="cell-AeU&lt;"><span class="selected-value select-value-color-pink">Difícil</span></td><td class="cell-[{WT">Con sueño entrenas tarde post edición video</td><td class="cell-DfGB"></td></tr><tr id="1ea7aec4-4ce2-8147-bbce-e241992867e0"><td class="cell-title"><a href="Espalda%20femoral%202%201ea7aec44ce28147bbcee241992867e0.html">Espalda femoral 2</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@6 de mayo de 2025 0:08</time></td><td class="cell-gcyK"></td><td class="cell-NZde"></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"></td></tr><tr id="1e97aec4-4ce2-81db-a246-cfc7bf5e18f0"><td class="cell-title"><a href="Entreno%20pata%202%201e97aec44ce281dba246cfc7bf5e18f0.html">Entreno pata 2</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"><time>@9 de mayo de 2025</time></td><td class="cell-sKaa"><time>@5 de mayo de 2025 0:09</time></td><td class="cell-gcyK"><span class="selected-value select-value-color-green">Muy bien</span></td><td class="cell-NZde"><span class="selected-value select-value-color-green">Muy bien</span></td><td class="cell-`zrP">50</td><td class="cell-gb=H"><span class="selected-value select-value-color-green">Muy bien</span></td><td class="cell-wMjs"><span class="selected-value select-value-color-blue">Regular</span></td><td class="cell-AeU&lt;"><span class="selected-value select-value-color-green">Algo dura</span></td><td class="cell-[{WT">Usas rodilleras de locos luego de tienpo y momento de desconexión. Entreno que disfrutas</td><td class="cell-DfGB"><span class="selected-value select-value-color-brown">Fuerza</span></td></tr><tr id="1e87aec4-4ce2-81b0-8f3c-eeff133bee37"><td class="cell-title"><a href="Entreno%20rugby%20acondicionamiento%201e87aec44ce281b08f3ceeff133bee37.html">Entreno rugby acondicionamiento</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"><time>@4 de mayo de 2025</time></td><td class="cell-sKaa"><time>@4 de mayo de 2025 0:10</time></td><td class="cell-gcyK"></td><td class="cell-NZde"></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"><span class="selected-value select-value-color-orange">Rugby Acondicionamiento</span></td></tr><tr id="1e77aec4-4ce2-811f-a38f-eeb9aa9ba1da"><td class="cell-title"><a href="Entreno%20pecho%20espalda%201e77aec44ce2811fa38feeb9aa9ba1da.html">Entreno pecho espalda.</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"><time>@3 de mayo de 2025</time></td><td class="cell-sKaa"><time>@3 de mayo de 2025 0:03</time></td><td class="cell-gcyK"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-NZde"><span class="selected-value select-value-color-gray">Mal</span></td><td class="cell-`zrP">50</td><td class="cell-gb=H"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-wMjs"><span class="selected-value select-value-color-blue">Regular</span></td><td class="cell-AeU&lt;"><span class="selected-value select-value-color-green">Algo dura</span></td><td class="cell-[{WT">Dormiste mal y te  sentía sin poco cansado pero entregaste y disfrutaste co.o un bellaco</td><td class="cell-DfGB"><span class="selected-value select-value-color-green">Hipertrofia</span></td></tr><tr id="1e67aec4-4ce2-81aa-ba7a-eb61d8dec56b"><td class="cell-title"><a href="Entreno%20pierna%201e67aec44ce281aaba7aeb61d8dec56b.html">Entreno pierna </a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"><time>@2 de mayo de 2025</time></td><td class="cell-sKaa"><time>@2 de mayo de 2025 0:09</time></td><td class="cell-gcyK"><span class="selected-value select-value-color-green">Muy bien</span></td><td class="cell-NZde"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-`zrP">50</td><td class="cell-gb=H"><span class="selected-value select-value-color-green">Muy bien</span></td><td class="cell-wMjs"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT">Duermes a las 3 cabron </td><td class="cell-DfGB"><span class="selected-value select-value-color-green">Hipertrofia</span></td></tr><tr id="1e57aec4-4ce2-8173-a08b-fe94807a639f"><td class="cell-title"><a href="Plantilla%20para%20entrenos%201e57aec44ce28173a08bfe94807a639f.html">Plantilla para entrenos</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@1 de mayo de 2025 0:05</time></td><td class="cell-gcyK"></td><td class="cell-NZde"></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"></td></tr><tr id="1e47aec4-4ce2-8105-8597-cf1937465148"><td class="cell-title"><a href="Plantilla%20para%20entrenos%201e47aec44ce281058597cf1937465148.html">Plantilla para entrenos</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@30 de abril de 2025 0:09</time></td><td class="cell-gcyK"></td><td class="cell-NZde"></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"></td></tr><tr id="2f47aec4-4ce2-8132-b097-f6b88af56b21"><td class="cell-title"><a href="Empuje%205%20b1%202f47aec44ce28132b097f6b88af56b21.html">Empuje 5 b1</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@27 de enero de 2026 0:07</time></td><td class="cell-gcyK"></td><td class="cell-NZde"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-`zrP">50</td><td class="cell-gb=H"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"></td></tr><tr id="2f47aec4-4ce2-8035-8053-e9c502fa1471"><td class="cell-title"><a href="Pierna%205%20b1%202f47aec44ce280358053e9c502fa1471.html">Pierna 5 b1</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"><time>@26 de enero de 2026</time></td><td class="cell-sKaa"><time>@26 de enero de 2026 15:56</time></td><td class="cell-gcyK"><span class="selected-value select-value-color-green">Muy bien</span></td><td class="cell-NZde"><span class="selected-value select-value-color-gray">Mal</span></td><td class="cell-`zrP">50</td><td class="cell-gb=H"><span class="selected-value select-value-color-green">Muy bien</span></td><td class="cell-wMjs"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"><span class="selected-value select-value-color-green">Hipertrofia</span></td></tr><tr id="2f17aec4-4ce2-815f-b9b9-e1821b583d9e"><td class="cell-title"><a href="Torso%20fast%202f17aec44ce2815fb9b9e1821b583d9e.html">Torso fast</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@24 de enero de 2026 0:07</time></td><td class="cell-gcyK"></td><td class="cell-NZde"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"><span class="selected-value select-value-color-green">Hipertrofia</span></td></tr><tr id="2ee7aec4-4ce2-8175-a26e-cf5be00a03fe"><td class="cell-title"><a href="Cadena%20posterior%204%202ee7aec44ce28175a26ecf5be00a03fe.html">Cadena posterior 4</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@21 de enero de 2026 0:08</time></td><td class="cell-gcyK"></td><td class="cell-NZde"><span class="selected-value select-value-color-gray">Mal</span></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"></td></tr><tr id="2ed7aec4-4ce2-81e2-8013-ec3713520b59"><td class="cell-title"><a href="Empuje%204%20b1%20fatiga%202ed7aec44ce281e28013ec3713520b59.html">Empuje 4 b1 fatiga </a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@20 de enero de 2026 0:05</time></td><td class="cell-gcyK"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-NZde"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-`zrP">50</td><td class="cell-gb=H"><span class="selected-value select-value-color-green">Muy bien</span></td><td class="cell-wMjs"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"><span class="selected-value select-value-color-pink">Halterofilia</span></td></tr><tr id="2ec7aec4-4ce2-8131-84b6-c74d338622e6"><td class="cell-title"><a href="Pierna%203%20B1%202ec7aec44ce2813184b6c74d338622e6.html">Pierna 3 B1</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@19 de enero de 2026 0:07</time></td><td class="cell-gcyK"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-NZde"><span class="selected-value select-value-color-blue">Regular</span></td><td class="cell-`zrP">50</td><td class="cell-gb=H"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-wMjs"><span class="selected-value select-value-color-blue">Regular</span></td><td class="cell-AeU&lt;"><span class="selected-value select-value-color-pink">Difícil</span></td><td class="cell-[{WT"></td><td class="cell-DfGB"><span class="selected-value select-value-color-green">Hipertrofia</span></td></tr><tr id="2e97aec4-4ce2-81e2-b371-f1402b82f511"><td class="cell-title"><a href="Brazo%20mas%20banca%20mid%20rapido%202e97aec44ce281e2b371f1402b82f511.html">Brazo mas banca mid rapido</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@16 de enero de 2026 0:15</time></td><td class="cell-gcyK"><span class="selected-value select-value-color-green">Muy bien</span></td><td class="cell-NZde"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-`zrP">50</td><td class="cell-gb=H"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-wMjs"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"><span class="selected-value select-value-color-green">Hipertrofia</span></td></tr><tr id="2e77aec4-4ce2-81b7-831d-c8ae2510c268"><td class="cell-title"><a href="Cadena%20posterior%203%202e77aec44ce281b7831dc8ae2510c268.html">Cadena posterior 3</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@14 de enero de 2026 0:13</time></td><td class="cell-gcyK"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-NZde"><span class="selected-value select-value-color-gray">Mal</span></td><td class="cell-`zrP">50</td><td class="cell-gb=H"><span class="selected-value select-value-color-green">Muy bien</span></td><td class="cell-wMjs"><span class="selected-value select-value-color-blue">Regular</span></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"></td></tr><tr id="2e67aec4-4ce2-818b-8c73-d2f99d459d3d"><td class="cell-title"><a href="Empuje%203%20b1%202026%202e67aec44ce2818b8c73d2f99d459d3d.html">Empuje 3 b1 2026</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@13 de enero de 2026 0:05</time></td><td class="cell-gcyK"></td><td class="cell-NZde"><span class="selected-value select-value-color-red">Muy muy bien</span></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"><span class="selected-value select-value-color-green">Muy bien</span></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"></td></tr><tr id="2e57aec4-4ce2-81ac-bf47-cf641d00b21c"><td class="cell-title"><a href="Pierna%202%20b1%202e57aec44ce281acbf47cf641d00b21c.html">Pierna 2 b1 </a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@12 de enero de 2026 0:13</time></td><td class="cell-gcyK"><span class="selected-value select-value-color-green">Muy bien</span></td><td class="cell-NZde"><span class="selected-value select-value-color-gray">Mal</span></td><td class="cell-`zrP">50</td><td class="cell-gb=H"><span class="selected-value select-value-color-green">Muy bien</span></td><td class="cell-wMjs"><span class="selected-value select-value-color-blue">Regular</span></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"><span class="selected-value select-value-color-green">Hipertrofia</span></td></tr><tr id="2e27aec4-4ce2-81b3-af21-f0a23ccce4df"><td class="cell-title"><a href="Espalda%20fast%202e27aec44ce281b3af21f0a23ccce4df.html">Espalda fast</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@9 de enero de 2026 0:04</time></td><td class="cell-gcyK"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-NZde"><span class="selected-value select-value-color-blue">Regular</span></td><td class="cell-`zrP">50</td><td class="cell-gb=H"><span class="selected-value select-value-color-green">Muy bien</span></td><td class="cell-wMjs"><span class="selected-value select-value-color-blue">Regular</span></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"><span class="selected-value select-value-color-green">Hipertrofia</span></td></tr><tr id="2e17aec4-4ce2-811c-ab61-e5133cd68d09"><td class="cell-title"><a href="Empujes%202%202e17aec44ce2811cab61e5133cd68d09.html">Empujes 2</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@8 de enero de 2026 0:14</time></td><td class="cell-gcyK"></td><td class="cell-NZde"></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"><span class="selected-value select-value-color-green">Hipertrofia</span></td></tr><tr id="2e07aec4-4ce2-8177-bbda-d32d841e5b53"><td class="cell-title"><a href="Pierna%20dia%201%20co%20pleto%20adicional%20Descanso%202e07aec44ce28177bbdad32d841e5b53.html">Pierna dia 1 co.pleto adicional Descanso </a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@7 de enero de 2026 0:11</time></td><td class="cell-gcyK"></td><td class="cell-NZde"></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"></td></tr><tr id="2dc7aec4-4ce2-81cd-a5a1-ef5df63ccecc"><td class="cell-title"><a href="Tir%C3%B3n%201%20B1%202dc7aec44ce281cda5a1ef5df63ccecc.html">Tirón 1 B1</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@3 de enero de 2026 0:11</time></td><td class="cell-gcyK"></td><td class="cell-NZde"></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"></td></tr><tr id="2db7aec4-4ce2-8120-944e-df42ab33f24d"><td class="cell-title"><a href="Empuje%201%20bloque%201%202026%202db7aec44ce28120944edf42ab33f24d.html">Empuje 1 bloque 1 2026</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@2 de enero de 2026 0:08</time></td><td class="cell-gcyK"></td><td class="cell-NZde"></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"></td></tr><tr id="2d97aec4-4ce2-8115-9464-c7b1a4ab86e0"><td class="cell-title"><a href="Pierna%20ulti%202d97aec44ce281159464c7b1a4ab86e0.html">Pierna ulti</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@31 de diciembre de 2025 0:04</time></td><td class="cell-gcyK"></td><td class="cell-NZde"></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"></td></tr><tr id="2d47aec4-4ce2-813e-9033-d0691631cbb6"><td class="cell-title"><a href="Cadena%20posterior%202d47aec44ce2813e9033d0691631cbb6.html">Cadena posterior </a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@26 de diciembre de 2025 0:04</time></td><td class="cell-gcyK"><span class="selected-value select-value-color-blue">Regular</span></td><td class="cell-NZde"><span class="selected-value select-value-color-purple">Muy muy mal</span></td><td class="cell-`zrP">50</td><td class="cell-gb=H"><span class="selected-value select-value-color-blue">Regular</span></td><td class="cell-wMjs"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"><span class="selected-value select-value-color-green">Hipertrofia</span></td></tr><tr id="2d07aec4-4ce2-814a-8834-f2fa3b7a9a86"><td class="cell-title"><a href="Cadena%20posterior%201%20nuevo%20bloque%202d07aec44ce2814a8834f2fa3b7a9a86.html">Cadena posterior 1 nuevo bloque</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@22 de diciembre de 2025 0:01</time></td><td class="cell-gcyK"></td><td class="cell-NZde"><span class="selected-value select-value-color-green">Muy bien</span></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"><span class="selected-value select-value-color-green">Hipertrofia</span></td></tr><tr id="2cb7aec4-4ce2-8144-9839-e01df02fbb39"><td class="cell-title"><a href="Pierna%20post%20buena%20anterior%202cb7aec44ce281449839e01df02fbb39.html">Pierna post buena anterior</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@17 de diciembre de 2025 0:04</time></td><td class="cell-gcyK"></td><td class="cell-NZde"><span class="selected-value select-value-color-green">Muy bien</span></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"></td></tr><tr id="2ca7aec4-4ce2-8190-8c4c-c88b759f6ff8"><td class="cell-title"><a href="Empujes%20con%20topset%20banca%20luego%20de%203%20semanas%20min%202ca7aec44ce281908c4cc88b759f6ff8.html">Empujes con topset banca luego de 3 semanas min</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@16 de diciembre de 2025 0:10</time></td><td class="cell-gcyK"></td><td class="cell-NZde"></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"></td></tr><tr id="2c97aec4-4ce2-81f2-9efd-e8c964b46730"><td class="cell-title"><a href="Cadena%20posterior%202c97aec44ce281f29efde8c964b46730.html">Cadena posterior </a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@15 de diciembre de 2025 0:11</time></td><td class="cell-gcyK"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-NZde"><span class="selected-value select-value-color-blue">Regular</span></td><td class="cell-`zrP">50</td><td class="cell-gb=H"><span class="selected-value select-value-color-green">Muy bien</span></td><td class="cell-wMjs"><span class="selected-value select-value-color-blue">Regular</span></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"><span class="selected-value select-value-color-green">Hipertrofia</span></td></tr><tr id="2c47aec4-4ce2-81bc-988d-e92dcb399793"><td class="cell-title"><a href="Brazo%203%202c47aec44ce281bc988de92dcb399793.html">Brazo 3</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@10 de diciembre de 2025 0:10</time></td><td class="cell-gcyK"></td><td class="cell-NZde"></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"></td></tr><tr id="2c17aec4-4ce2-819f-98b7-f5c93f64fede"><td class="cell-title"><a href="Cadena%20post%20post%20mini%20descarga%202c17aec44ce2819f98b7f5c93f64fede.html">Cadena post post mini descarga</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@7 de diciembre de 2025 0:10</time></td><td class="cell-gcyK"></td><td class="cell-NZde"></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"></td></tr><tr id="2c07aec4-4ce2-8109-9aac-e8c02668d9d5"><td class="cell-title"><a href="Empuje%2030%202c07aec44ce281099aace8c02668d9d5.html">Empuje 30??</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@6 de diciembre de 2025 0:16</time></td><td class="cell-gcyK"></td><td class="cell-NZde"></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"></td></tr><tr id="1dd7aec4-4ce2-809e-9b09-cd5383c47065"><td class="cell-title"><a href="Plantilla%20para%20entrenos%20EJEMPLO%201dd7aec44ce2809e9b09cd5383c47065.html">Plantilla para entrenos: EJEMPLO</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@22 de abril de 2025 16:59</time></td><td class="cell-gcyK"><span class="selected-value select-value-color-green">Muy bien</span></td><td class="cell-NZde"><span class="selected-value select-value-color-red">Muy muy bien</span></td><td class="cell-`zrP">50</td><td class="cell-gb=H"><span class="selected-value select-value-color-green">Muy bien</span></td><td class="cell-wMjs"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-AeU&lt;"><span class="selected-value select-value-color-green">Algo dura</span></td><td class="cell-[{WT"></td><td class="cell-DfGB"><span class="selected-value select-value-color-green">Hipertrofia</span></td></tr><tr id="1dd7aec4-4ce2-806b-8005-d9c4160889d2"><td class="cell-title"><a href="Plantilla%20para%20entrenos%20EJEMPLO%201dd7aec44ce2806b8005d9c4160889d2.html">Plantilla para entrenos: EJEMPLO</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@22 de abril de 2025 17:20</time></td><td class="cell-gcyK"><span class="selected-value select-value-color-green">Muy bien</span></td><td class="cell-NZde"><span class="selected-value select-value-color-red">Muy muy bien</span></td><td class="cell-`zrP">50</td><td class="cell-gb=H"><span class="selected-value select-value-color-green">Muy bien</span></td><td class="cell-wMjs"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-AeU&lt;"><span class="selected-value select-value-color-green">Algo dura</span></td><td class="cell-[{WT"></td><td class="cell-DfGB"><span class="selected-value select-value-color-green">Hipertrofia</span></td></tr><tr id="1dd7aec4-4ce2-8198-8263-f7350c080b60"><td class="cell-title"><a href="Plantilla%20para%20entreno%201dd7aec44ce281988263f7350c080b60.html">Plantilla para entreno</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@23 de abril de 2025 0:11</time></td><td class="cell-gcyK"></td><td class="cell-NZde"><span class="selected-value select-value-color-green">Muy bien</span></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"><span class="selected-value select-value-color-green">Hipertrofia</span></td></tr><tr id="1de7aec4-4ce2-8141-a6f3-f153a3ba7148"><td class="cell-title"><a href="Plantilla%20para%20entrenos%201de7aec44ce28141a6f3f153a3ba7148.html">Plantilla para entrenos</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@24 de abril de 2025 0:15</time></td><td class="cell-gcyK"></td><td class="cell-NZde"></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"></td></tr><tr id="1df7aec4-4ce2-8106-a88f-fc98ebae3c6a"><td class="cell-title"><a href="Plantilla%20para%20entrenos%201df7aec44ce28106a88ffc98ebae3c6a.html">Plantilla para entrenos</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@25 de abril de 2025 0:02</time></td><td class="cell-gcyK"></td><td class="cell-NZde"></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"></td></tr><tr id="1e07aec4-4ce2-81d4-82f7-e340e811dca6"><td class="cell-title"><a href="Plantilla%20para%20entrenos%201e07aec44ce281d482f7e340e811dca6.html">Plantilla para entrenos</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@26 de abril de 2025 0:00</time></td><td class="cell-gcyK"></td><td class="cell-NZde"></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"></td></tr><tr id="1e17aec4-4ce2-80ff-b120-c5a4b3213265"><td class="cell-title"><a href="Entreno%20de%20pata%2026%2004%201e17aec44ce280ffb120c5a4b3213265.html">Entreno de pata 26/04</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"><time>@26 de abril de 2025</time></td><td class="cell-sKaa"><time>@26 de abril de 2025 15:20</time></td><td class="cell-gcyK"><span class="selected-value select-value-color-blue">Regular</span></td><td class="cell-NZde"><span class="selected-value select-value-color-gray">Mal</span></td><td class="cell-`zrP">90</td><td class="cell-gb=H"><span class="selected-value select-value-color-gray">Mal</span></td><td class="cell-wMjs"><span class="selected-value select-value-color-gray">Mal</span></td><td class="cell-AeU&lt;"><span class="selected-value select-value-color-green">Algo dura</span></td><td class="cell-[{WT">Un entreno algo flojo y sin muchas ganas, se podría haber hecho mejor, la cafeina no hizo tanto efecto puesto que habia dormir 4 horas, y tenía 2 examenes</td><td class="cell-DfGB"><span class="selected-value select-value-color-green">Hipertrofia</span></td></tr><tr id="1e17aec4-4ce2-81a3-b4bb-cd18032db24a"><td class="cell-title"><a href="Plantilla%20para%20entrenos%201e17aec44ce281a3b4bbcd18032db24a.html">Plantilla para entrenos</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@27 de abril de 2025 0:12</time></td><td class="cell-gcyK"></td><td class="cell-NZde"></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"></td></tr><tr id="1e27aec4-4ce2-812d-bb9d-d84177ed087a"><td class="cell-title"><a href="Entreno%20empujes%20bloque%20fuerza%20+%20hipetrofia%201e27aec44ce2812dbb9dd84177ed087a.html">Entreno empujes bloque fuerza + hipetrofia</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"><time>@29 de abril de 2025</time></td><td class="cell-sKaa"><time>@28 de abril de 2025 0:21</time></td><td class="cell-gcyK"><span class="selected-value select-value-color-green">Muy bien</span></td><td class="cell-NZde"><span class="selected-value select-value-color-red">Muy muy bien</span></td><td class="cell-`zrP">120</td><td class="cell-gb=H"><span class="selected-value select-value-color-green">Muy bien</span></td><td class="cell-wMjs"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-AeU&lt;"><span class="selected-value select-value-color-green">Algo dura</span></td><td class="cell-[{WT">Buen entreno. Me ha gustado </td><td class="cell-DfGB"><span class="selected-value select-value-color-green">Hipertrofia</span></td></tr><tr id="1e37aec4-4ce2-81d3-b7f4-dc49a3c70c05"><td class="cell-title"><a href="Entreno%20espalda%20y%20femoral%20(cadena%20posterior)%201e37aec44ce281d3b7f4dc49a3c70c05.html">Entreno espalda y femoral (cadena posterior)</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"><time>@30 de abril de 2025</time></td><td class="cell-sKaa"><time>@29 de abril de 2025 0:12</time></td><td class="cell-gcyK"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-NZde"><span class="selected-value select-value-color-gray">Mal</span></td><td class="cell-`zrP">50</td><td class="cell-gb=H"><span class="selected-value select-value-color-red">Muy muy bien</span></td><td class="cell-wMjs"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-AeU&lt;"><span class="selected-value select-value-color-green">Algo dura</span></td><td class="cell-[{WT">Dormiste mal y tarde por sobre pensar en tus proyectos pero dentro de eso fue un buen día y un entreno de locos</td><td class="cell-DfGB"><span class="selected-value select-value-color-green">Hipertrofia</span></td></tr><tr id="2297aec4-4ce2-81d6-8e52-e5711355f96f"><td class="cell-title"><a href="Torso%20mas%20clase%20calvo%202297aec44ce281d68e52e5711355f96f.html">Torso mas clase calvo</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@8 de julio de 2025 0:12</time></td><td class="cell-gcyK"></td><td class="cell-NZde"></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"></td></tr><tr id="2307aec4-4ce2-8143-8e79-c3c08ad61751"><td class="cell-title"><a href="Cadena%20posterior%2011%202307aec44ce281438e79c3c08ad61751.html">Cadena posterior 11</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@15 de julio de 2025 0:03</time></td><td class="cell-gcyK"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-NZde"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-`zrP">50</td><td class="cell-gb=H"><span class="selected-value select-value-color-green">Muy bien</span></td><td class="cell-wMjs"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"><span class="selected-value select-value-color-green">Hipertrofia</span></td></tr><tr id="2327aec4-4ce2-8188-b317-d83ace7674e3"><td class="cell-title"><a href="Pata%2011%20molestia%20mu%C3%B1eca%202327aec44ce28188b317d83ace7674e3.html">Pata 11 molestia muñeca</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@17 de julio de 2025 0:11</time></td><td class="cell-gcyK"></td><td class="cell-NZde"></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"></td></tr><tr id="2337aec4-4ce2-818b-9026-d49be88586e4"><td class="cell-title"><a href="Torso%2010%20molestia%20mu%C3%B1eca%202337aec44ce2818b9026d49be88586e4.html">Torso 10 molestia muñeca</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@18 de julio de 2025 0:00</time></td><td class="cell-gcyK"></td><td class="cell-NZde"></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"></td></tr><tr id="2367aec4-4ce2-819c-a976-e92f0b20a45b"><td class="cell-title"><a href="Empuje%2012%202367aec44ce2819ca976e92f0b20a45b.html">Empuje 12</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@21 de julio de 2025 0:01</time></td><td class="cell-gcyK"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-NZde"><span class="selected-value select-value-color-blue">Regular</span></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"><span class="selected-value select-value-color-green">Hipertrofia</span></td></tr><tr id="2377aec4-4ce2-8126-87da-c65826379cb2"><td class="cell-title"><a href="Cadena%20posterior%2012%202377aec44ce2812687dac65826379cb2.html">Cadena posterior 12</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@22 de julio de 2025 0:17</time></td><td class="cell-gcyK"></td><td class="cell-NZde"></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"><span class="selected-value select-value-color-green">Hipertrofia</span></td></tr><tr id="2397aec4-4ce2-8185-b0e8-e6e41774b441"><td class="cell-title"><a href="Pata%2012%20SBD%202397aec44ce28185b0e8e6e41774b441.html">Pata 12 SBD</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@24 de julio de 2025 0:06</time></td><td class="cell-gcyK"></td><td class="cell-NZde"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"><span class="selected-value select-value-color-green">Hipertrofia</span></td></tr><tr id="23b7aec4-4ce2-81da-9a64-d0b11c380320"><td class="cell-title"><a href="Torso%2011%2023b7aec44ce281da9a64d0b11c380320.html">Torso 11</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@26 de julio de 2025 0:00</time></td><td class="cell-gcyK"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-NZde"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-`zrP">50</td><td class="cell-gb=H"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-wMjs"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"><span class="selected-value select-value-color-green">Hipertrofia</span></td></tr><tr id="23d7aec4-4ce2-817a-8065-f1a4a8645fc8"><td class="cell-title"><a href="Empuje%2013%20buen%20calentamiento%20previo%2023d7aec44ce2817a8065f1a4a8645fc8.html">Empuje 13 buen calentamiento previo </a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@28 de julio de 2025 0:06</time></td><td class="cell-gcyK"><span class="selected-value select-value-color-green">Muy bien</span></td><td class="cell-NZde"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-`zrP">50</td><td class="cell-gb=H"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-wMjs"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"><span class="selected-value select-value-color-green">Hipertrofia</span></td></tr><tr id="23e7aec4-4ce2-8101-98c7-e39329cb2428"><td class="cell-title"><a href="Cadena%20post%2023e7aec44ce2810198c7e39329cb2428.html">Cadena post</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@29 de julio de 2025 0:13</time></td><td class="cell-gcyK"></td><td class="cell-NZde"></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"></td></tr><tr id="2407aec4-4ce2-8154-abe6-ef7fe6aebb89"><td class="cell-title"><a href="Pierna%2013%20SBD%202407aec44ce28154abe6ef7fe6aebb89.html">Pierna 13 SBD</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@31 de julio de 2025 0:13</time></td><td class="cell-gcyK"></td><td class="cell-NZde"></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"></td></tr><tr id="2447aec4-4ce2-8179-88ee-ce9d90cb940b"><td class="cell-title"><a href="Empuje%2014%202447aec44ce2817988eece9d90cb940b.html">Empuje 14</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@4 de agosto de 2025 0:08</time></td><td class="cell-gcyK"><span class="selected-value select-value-color-green">Muy bien</span></td><td class="cell-NZde"><span class="selected-value select-value-color-gray">Mal</span></td><td class="cell-`zrP">50</td><td class="cell-gb=H"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-wMjs"><span class="selected-value select-value-color-gray">Mal</span></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"><span class="selected-value select-value-color-green">Hipertrofia</span></td></tr><tr id="2497aec4-4ce2-81b5-8ca2-d50c0b4063f2"><td class="cell-title"><a href="Cadena%20posterior%2013%20Vacas%202497aec44ce281b58ca2d50c0b4063f2.html">Cadena posterior 13? Vacas</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@9 de agosto de 2025 0:03</time></td><td class="cell-gcyK"></td><td class="cell-NZde"></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"></td></tr><tr id="24a7aec4-4ce2-81fc-b053-f18d4828586e"><td class="cell-title"><a href="Pierna%2014%20post%205d%2024a7aec44ce281fcb053f18d4828586e.html">Pierna 14 post 5d</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@10 de agosto de 2025 0:18</time></td><td class="cell-gcyK"></td><td class="cell-NZde"></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"></td></tr><tr id="24b7aec4-4ce2-8128-ac06-edc76b5f49a8"><td class="cell-title"><a href="Torso%2012%20continuaci%C3%B3n%203%20dias%2024b7aec44ce28128ac06edc76b5f49a8.html">Torso 12 continuación 3 dias</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@11 de agosto de 2025 0:20</time></td><td class="cell-gcyK"></td><td class="cell-NZde"></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"></td></tr><tr id="24c7aec4-4ce2-813c-b886-fde7b9ddd6e4"><td class="cell-title"><a href="Empuje%2017%20V2%2024c7aec44ce2813cb886fde7b9ddd6e4.html">Empuje 17 V2</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@12 de agosto de 2025 0:09</time></td><td class="cell-gcyK"></td><td class="cell-NZde"></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"></td></tr><tr id="24d7aec4-4ce2-81e4-a6c4-d31efbee38bf"><td class="cell-title"><a href="Empuje%2018%20post%20vacas%201sem%20sin%2024d7aec44ce281e4a6c4d31efbee38bf.html">Empuje 18 post vacas 1sem sin</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@13 de agosto de 2025 0:13</time></td><td class="cell-gcyK"></td><td class="cell-NZde"><span class="selected-value select-value-color-blue">Regular</span></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"><span class="selected-value select-value-color-green">Hipertrofia</span></td></tr><tr id="24e7aec4-4ce2-81db-950e-f1099ecbd487"><td class="cell-title"><a href="Cadena%20posterior%20post%20vacas%20fast%2024e7aec44ce281db950ef1099ecbd487.html">Cadena posterior post vacas fast</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@14 de agosto de 2025 0:09</time></td><td class="cell-gcyK"></td><td class="cell-NZde"><span class="selected-value select-value-color-blue">Regular</span></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"></td></tr><tr id="24f7aec4-4ce2-8155-ac7a-efa5663ef7f2"><td class="cell-title"><a href="Empuje%2014%2024f7aec44ce28155ac7aefa5663ef7f2.html">Empuje 14</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@15 de agosto de 2025 0:19</time></td><td class="cell-gcyK"></td><td class="cell-NZde"></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"></td></tr><tr id="2507aec4-4ce2-81c2-a3be-f4bd3c51d174"><td class="cell-title"><a href="Cadena%20posterior%2015%202507aec44ce281c2a3bef4bd3c51d174.html">Cadena posterior 15</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@16 de agosto de 2025 0:18</time></td><td class="cell-gcyK"></td><td class="cell-NZde"></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"></td></tr><tr id="2517aec4-4ce2-8117-82b6-e7eb951a32a8"><td class="cell-title"><a href="Pierna%2014%202517aec44ce2811782b6e7eb951a32a8.html">Pierna 14</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@17 de agosto de 2025 0:13</time></td><td class="cell-gcyK"></td><td class="cell-NZde"></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"></td></tr><tr id="2527aec4-4ce2-81c2-9cbc-db31981043dd"><td class="cell-title"><a href="Empuje%2017%202527aec44ce281c29cbcdb31981043dd.html">Empuje 17</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@18 de agosto de 2025 0:08</time></td><td class="cell-gcyK"></td><td class="cell-NZde"><span class="selected-value select-value-color-purple">Muy muy mal</span></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"><span class="selected-value select-value-color-purple">Muy muy mal</span></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"></td></tr><tr id="2537aec4-4ce2-819f-ba1f-e482211345cb"><td class="cell-title"><a href="Torso%2014%202537aec44ce2819fba1fe482211345cb.html">Torso 14</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@19 de agosto de 2025 0:00</time></td><td class="cell-gcyK"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-NZde"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-`zrP">50</td><td class="cell-gb=H"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-wMjs"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"><span class="selected-value select-value-color-green">Hipertrofia</span></td></tr><tr id="2547aec4-4ce2-811d-929e-f950343054ff"><td class="cell-title"><a href="Plantilla%20para%20entrenos%202547aec44ce2811d929ef950343054ff.html">Plantilla para entrenos</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@20 de agosto de 2025 0:07</time></td><td class="cell-gcyK"></td><td class="cell-NZde"></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"></td></tr><tr id="2567aec4-4ce2-8126-9c35-c7eef35a4504"><td class="cell-title"><a href="Empuje%2016%202567aec44ce281269c35c7eef35a4504.html">Empuje 16</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@22 de agosto de 2025 0:06</time></td><td class="cell-gcyK"></td><td class="cell-NZde"></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"></td></tr><tr id="2577aec4-4ce2-8154-abb4-fbd9497cca56"><td class="cell-title"><a href="Espalda%20fast%202577aec44ce28154abb4fbd9497cca56.html">Espalda fast</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@23 de agosto de 2025 0:10</time></td><td class="cell-gcyK"></td><td class="cell-NZde"><span class="selected-value select-value-color-purple">Muy muy mal</span></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"></td></tr><tr id="2587aec4-4ce2-8160-a6d6-d561e1896424"><td class="cell-title"><a href="Cadena%20posterior%2016%202587aec44ce28160a6d6d561e1896424.html">Cadena posterior 16</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@24 de agosto de 2025 0:16</time></td><td class="cell-gcyK"></td><td class="cell-NZde"></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"></td></tr><tr id="25a7aec4-4ce2-8122-92ba-ecdeca2ef43b"><td class="cell-title"><a href="Pierna%2016%20sin%20rodis%2025a7aec44ce2812292baecdeca2ef43b.html">Pierna 16 sin rodis</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@26 de agosto de 2025 0:19</time></td><td class="cell-gcyK"></td><td class="cell-NZde"></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"></td></tr><tr id="25c7aec4-4ce2-8162-ad32-ff0622aef7de"><td class="cell-title"><a href="Espalda%20extra%20post%20empuje%20ya%20que%20no%20hiciste%20torso%2025c7aec44ce28162ad32ff0622aef7de.html">Espalda extra post empuje ya que no hiciste torso</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@28 de agosto de 2025 0:02</time></td><td class="cell-gcyK"></td><td class="cell-NZde"></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"></td></tr><tr id="26d7aec4-4ce2-81cd-96f8-e87bb7dab65b"><td class="cell-title"><a href="Torso%20luego%20de%20pila%20tiempo%2026d7aec44ce281cd96f8e87bb7dab65b.html">Torso luego de pila tiempo </a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@14 de septiembre de 2025 0:00</time></td><td class="cell-gcyK"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-NZde"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-`zrP">50</td><td class="cell-gb=H"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-wMjs"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"><span class="selected-value select-value-color-green">Hipertrofia</span></td></tr><tr id="2737aec4-4ce2-8111-b3c1-e3e1b0131657"><td class="cell-title"><a href="Pierna%20meh%202737aec44ce28111b3c1e3e1b0131657.html">Pierna meh</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@20 de septiembre de 2025 0:06</time></td><td class="cell-gcyK"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-NZde"><span class="selected-value select-value-color-blue">Regular</span></td><td class="cell-`zrP">50</td><td class="cell-gb=H"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-wMjs"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"></td></tr><tr id="27e7aec4-4ce2-81df-b6cd-c3bb064dbe7a"><td class="cell-title"><a href="Cadena%20posterior%20fast%2027e7aec44ce281dfb6cdc3bb064dbe7a.html">Cadena posterior fast</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@1 de octubre de 2025 0:27</time></td><td class="cell-gcyK"></td><td class="cell-NZde"></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"></td></tr><tr id="27f7aec4-4ce2-81ad-bdf5-e76d2fa69bbf"><td class="cell-title"><a href="Pata%20luego%20de%20tiempo%20pastilla%20tdah%20y%20enfado%20gym%20pe%2027f7aec44ce281adbdf5e76d2fa69bbf.html">Pata luego de tiempo pastilla tdah y enfado gym petal</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@2 de octubre de 2025 0:04</time></td><td class="cell-gcyK"></td><td class="cell-NZde"></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"></td></tr><tr id="2807aec4-4ce2-812b-9817-f66df1d25b96"><td class="cell-title"><a href="Torso%2019%20hoy%20parece%20q%20fuerza%20no%20acompa%C3%B1a%202807aec44ce2812b9817f66df1d25b96.html">Torso 19 hoy parece q fuerza no acompaña</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@3 de octubre de 2025 0:06</time></td><td class="cell-gcyK"><span class="selected-value select-value-color-blue">Regular</span></td><td class="cell-NZde"><span class="selected-value select-value-color-green">Muy bien</span></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"></td></tr><tr id="2817aec4-4ce2-8129-8aa2-f73058b123ac"><td class="cell-title"><a href="Empuje%2021%20sin%20magnesio%202817aec44ce281298aa2f73058b123ac.html">Empuje 21 sin magnesio</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@4 de octubre de 2025 0:09</time></td><td class="cell-gcyK"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-NZde"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-`zrP">50</td><td class="cell-gb=H"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-wMjs"><span class="selected-value select-value-color-blue">Regular</span></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"></td></tr><tr id="2827aec4-4ce2-81ba-8ed2-cdc29ea9b52c"><td class="cell-title"><a href="Torso%2020%202827aec44ce281ba8ed2cdc29ea9b52c.html">Torso 20</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@5 de octubre de 2025 0:01</time></td><td class="cell-gcyK"></td><td class="cell-NZde"></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"></td></tr><tr id="2837aec4-4ce2-81fa-94c2-c296f121791b"><td class="cell-title"><a href="Empuje%2020%202837aec44ce281fa94c2c296f121791b.html">Empuje 20</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@6 de octubre de 2025 0:20</time></td><td class="cell-gcyK"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-NZde"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"><span class="selected-value select-value-color-green">Hipertrofia</span></td></tr><tr id="2847aec4-4ce2-81f0-824b-f69e9bba2634"><td class="cell-title"><a href="Pierna%20fatiga%202847aec44ce281f0824bf69e9bba2634.html">Pierna fatiga</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@7 de octubre de 2025 0:03</time></td><td class="cell-gcyK"></td><td class="cell-NZde"></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"></td></tr><tr id="2857aec4-4ce2-8184-899b-e6f77335eee8"><td class="cell-title"><a href="Cadena%20posterior%2019%202857aec44ce28184899be6f77335eee8.html">Cadena posterior 19</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@8 de octubre de 2025 0:02</time></td><td class="cell-gcyK"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-NZde"><span class="selected-value select-value-color-purple">Muy muy mal</span></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"><span class="selected-value select-value-color-blue">Regular</span></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"></td></tr><tr id="2887aec4-4ce2-8088-b39f-dbd6bf8e713e"><td class="cell-title"><a href="Empuje%2022%202887aec44ce28088b39fdbd6bf8e713e.html">Empuje 22</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@11 de octubre de 2025 1:25</time></td><td class="cell-gcyK"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-NZde"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-`zrP">50</td><td class="cell-gb=H"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-wMjs"><span class="selected-value select-value-color-blue">Regular</span></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"></td></tr><tr id="28f7aec4-4ce2-8175-b174-c992f3468564"><td class="cell-title"><a href="Pierna%20resaca%2028f7aec44ce28175b174c992f3468564.html">Pierna resaca </a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@18 de octubre de 2025 0:16</time></td><td class="cell-gcyK"></td><td class="cell-NZde"><span class="selected-value select-value-color-blue">Regular</span></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"><span class="selected-value select-value-color-green">Hipertrofia</span></td></tr><tr id="2947aec4-4ce2-81bb-9d4e-d05c223b2940"><td class="cell-title"><a href="Cadema%20posterior%20viernes%20ult%20oct%2020%202947aec44ce281bb9d4ed05c223b2940.html">Cadema posterior viernes ult oct 20</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@23 de octubre de 2025 0:18</time></td><td class="cell-gcyK"></td><td class="cell-NZde"><span class="selected-value select-value-color-blue">Regular</span></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"></td></tr><tr id="2977aec4-4ce2-81f5-a470-c2978b6bede5"><td class="cell-title"><a href="Pierna%2015%202977aec44ce281f5a470c2978b6bede5.html">Pierna 15</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@26 de octubre de 2025 0:05</time></td><td class="cell-gcyK"></td><td class="cell-NZde"><span class="selected-value select-value-color-blue">Regular</span></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"><span class="selected-value select-value-color-green">Hipertrofia</span></td></tr><tr id="2997aec4-4ce2-8169-8c5a-e10ed16f69be"><td class="cell-title"><a href="Torso%2021%20fast%20luego%20de%20rugby%20fisico%202997aec44ce281698c5ae10ed16f69be.html">Torso 21 fast luego de rugby fisico</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@28 de octubre de 2025 0:17</time></td><td class="cell-gcyK"></td><td class="cell-NZde"></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"></td></tr><tr id="29a7aec4-4ce2-814f-b0ec-fc981934ed63"><td class="cell-title"><a href="Cadena%20post%2021%20nov%2029a7aec44ce2814fb0ecfc981934ed63.html">Cadena post 21 nov</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@29 de octubre de 2025 0:15</time></td><td class="cell-gcyK"></td><td class="cell-NZde"></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"></td></tr><tr id="29e7aec4-4ce2-8126-b82b-d2bd9549cc8e"><td class="cell-title"><a href="Empuje%2023%20post%20halloween%2029e7aec44ce28126b82bd2bd9549cc8e.html">Empuje 23 post halloween</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@2 de noviembre de 2025 0:21</time></td><td class="cell-gcyK"></td><td class="cell-NZde"></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"></td></tr><tr id="2a17aec4-4ce2-815e-8a70-c3399080bc43"><td class="cell-title"><a href="Torso%2022%20duermes%20remal%202a17aec44ce2815e8a70c3399080bc43.html">Torso 22 duermes remal</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@5 de noviembre de 2025 0:00</time></td><td class="cell-gcyK"></td><td class="cell-NZde"></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"></td></tr><tr id="2a47aec4-4ce2-8102-be02-e612527d0e61"><td class="cell-title"><a href="Empuje%2024%202a47aec44ce28102be02e612527d0e61.html">Empuje 24</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@8 de noviembre de 2025 0:09</time></td><td class="cell-gcyK"><span class="selected-value select-value-color-green">Muy bien</span></td><td class="cell-NZde"><span class="selected-value select-value-color-green">Muy bien</span></td><td class="cell-`zrP">50</td><td class="cell-gb=H"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-wMjs"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"><span class="selected-value select-value-color-green">Hipertrofia</span></td></tr><tr id="2a57aec4-4ce2-8160-9c06-f61fb5cddb1f"><td class="cell-title"><a href="Cadena%20posterior%2022%202a57aec44ce281609c06f61fb5cddb1f.html">Cadena posterior 22</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@9 de noviembre de 2025 0:10</time></td><td class="cell-gcyK"></td><td class="cell-NZde"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"><span class="selected-value select-value-color-green">Hipertrofia</span></td></tr><tr id="2aa7aec4-4ce2-8101-a5f3-f76a52961810"><td class="cell-title"><a href="Pierna%20casi%20ayunando%2021%202aa7aec44ce28101a5f3f76a52961810.html">Pierna casi ayunando 21</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@14 de noviembre de 2025 0:12</time></td><td class="cell-gcyK"></td><td class="cell-NZde"></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"></td></tr><tr id="2ab7aec4-4ce2-819e-bc15-fd53eca1f0ec"><td class="cell-title"><a href="Torso%20post%202resak%20y%201%20rest%202ab7aec44ce2819ebc15fd53eca1f0ec.html">Torso post 2resak y 1 rest</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@15 de noviembre de 2025 0:02</time></td><td class="cell-gcyK"></td><td class="cell-NZde"></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"></td></tr><tr id="2ac7aec4-4ce2-8161-acc2-cf6b278a4f49"><td class="cell-title"><a href="Empuje%20fast%20Hipertrofia%202ac7aec44ce28161acc2cf6b278a4f49.html">Empuje fast Hipertrofia </a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@16 de noviembre de 2025 0:01</time></td><td class="cell-gcyK"></td><td class="cell-NZde"></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"></td></tr><tr id="2ae7aec4-4ce2-8182-9cd0-f188458c33f1"><td class="cell-title"><a href="Pierna%2022%202ae7aec44ce281829cd0f188458c33f1.html">Pierna 22</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@18 de noviembre de 2025 0:12</time></td><td class="cell-gcyK"><span class="selected-value select-value-color-green">Muy bien</span></td><td class="cell-NZde"><span class="selected-value select-value-color-green">Muy bien</span></td><td class="cell-`zrP">50</td><td class="cell-gb=H"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-wMjs"><span class="selected-value select-value-color-blue">Regular</span></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"></td></tr><tr id="2f57aec4-4ce2-8198-8686-e7ec2be51e52"><td class="cell-title"><a href="Cadena%20posterior%202f57aec44ce281988686e7ec2be51e52.html">Cadena posterior </a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@28 de enero de 2026 0:08</time></td><td class="cell-gcyK"><span class="selected-value select-value-color-blue">Regular</span></td><td class="cell-NZde"><span class="selected-value select-value-color-pink">Bien</span></td><td class="cell-`zrP">50</td><td class="cell-gb=H"></td><td class="cell-wMjs"><span class="selected-value select-value-color-blue">Regular</span></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"><span class="selected-value select-value-color-green">Hipertrofia</span></td></tr><tr id="2f77aec4-4ce2-813e-b8e1-c13dbbb558e4"><td class="cell-title"><a href="Empuje%205%20b2%20foco%20accesorios%202f77aec44ce2813eb8e1c13dbbb558e4.html">Empuje 5 b2 foco accesorios</a></td><td class="cell-Bj&lt;~"><div class="checkbox checkbox-on"></div></td><td class="cell-r_s}"></td><td class="cell-sKaa"><time>@30 de enero de 2026 0:07</time></td><td class="cell-gcyK"><span class="selected-value select-value-color-green">Muy bien</span></td><td class="cell-NZde"><span class="selected-value select-value-color-green">Muy bien</span></td><td class="cell-`zrP">50</td><td class="cell-gb=H"><span class="selected-value select-value-color-green">Muy bien</span></td><td class="cell-wMjs"><span class="selected-value select-value-color-green">Muy bien</span></td><td class="cell-AeU&lt;"></td><td class="cell-[{WT"></td><td class="cell-DfGB"><span class="selected-value select-value-color-green">Hipertrofia</span></td></tr></tbody></table><br/><br/></div></div><div style="display:contents" dir="auto"><p id="1dd7aec4-4ce2-818e-a5f7-c3294d6182d6" class="">
+</p></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

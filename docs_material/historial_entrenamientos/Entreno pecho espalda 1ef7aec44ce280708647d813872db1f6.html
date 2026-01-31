@@ -1,0 +1,716 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Entreno pecho espalda</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1ef7aec4-4ce2-8070-8647-d813872db1f6" class="page sans"><header><h1 class="page-title" dir="auto">Entreno pecho espalda</h1><p class="page-description" dir="auto"></p><table class="properties"><tbody><tr class="property-row property-row-created_time"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/clock_gray.svg" style="width:14px;height:14px;display:block"/></span>Creada</th><td><time>@10 de mayo de 2025 19:11</time></td></tr><tr class="property-row property-row-checkbox"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/checkmark-square_gray.svg" style="width:14px;height:14px;display:block"/></span>Archivar</th><td><div class="checkbox checkbox-on"></div></td></tr><tr class="property-row property-row-date"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/calendar_gray.svg" style="width:14px;height:14px;display:block"/></span>Fecha</th><td><time>@10 de mayo de 2025</time></td></tr><tr class="property-row property-row-number"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/clock_gray.svg" style="width:14px;height:14px;display:block"/></span>Duración (minutos)</th><td>50</td></tr><tr class="property-row property-row-select"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/arrow-circle-down_gray.svg" style="width:14px;height:14px;display:block"/></span>Tipo de Entrenamiento</th><td><span class="selected-value select-value-color-green">Hipertrofia</span></td></tr><tr class="property-row property-row-select"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/arrow-circle-down_gray.svg" style="width:14px;height:14px;display:block"/></span>Calidad de Sueño</th><td><span class="selected-value select-value-color-purple">Muy muy mal</span></td></tr><tr class="property-row property-row-select"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/arrow-circle-down_gray.svg" style="width:14px;height:14px;display:block"/></span>Nivel de estrés</th><td><span class="selected-value select-value-color-blue">Regular</span></td></tr><tr class="property-row property-row-select"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/arrow-circle-down_gray.svg" style="width:14px;height:14px;display:block"/></span>Agujetas (general)</th><td><span class="selected-value select-value-color-pink">Bien</span></td></tr><tr class="property-row property-row-select"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/arrow-circle-down_gray.svg" style="width:14px;height:14px;display:block"/></span>Estado de ánimo</th><td><span class="selected-value select-value-color-blue">Regular</span></td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/description_gray.svg" style="width:14px;height:14px;display:block"/></span>Reflexion</th><td>Te duermes a la 4 y te despiertas a las 10 y pico</td></tr></tbody></table></header><div class="page-body"><div style="display:contents" dir="auto"><p id="1ef7aec4-4ce2-8177-9481-dc2f774cf239" class=""><strong><span style="border-bottom:0.05em solid">ENTRENAMIENTO DE: pecho espalda</span></strong></p></div><div style="display:contents" dir="auto"><p id="1ef7aec4-4ce2-8148-b192-dca7e0bff156" class=""><strong>BLOQUE: 1</strong></p></div><div style="display:contents" dir="auto"><p id="1ef7aec4-4ce2-8188-aef5-d468989876f4" class=""><strong>MESOCICLO: 2 </strong></p></div><div style="display:contents" dir="auto"><p id="1ef7aec4-4ce2-8136-a923-e894fe98788f" class=""><strong>MICROCICLO: prchp espalda fatal cansamdo y sin ganas se entiende </strong></p></div><div style="display:contents" dir="auto"><h2 id="1ef7aec4-4ce2-81e3-a8d1-ecc8ca8d5f26" class="">🏋️ Ejercicio 1 :</h2></div><div style="display:contents" dir="ltr"><table id="1ef7aec4-4ce2-81f0-923d-e907f603ca7a" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="1ef7aec4-4ce2-81b4-a046-f84185d63ce5"><th id="uMCc" class="simple-table-header-color simple-table-header"></th><th id="jPid" class="simple-table-header-color simple-table-header">Reps</th><th id=":`E{" class="simple-table-header-color simple-table-header">Peso (kg)</th><th id="UOdI" class="simple-table-header-color simple-table-header">RIR / RPE</th><th id="{scN" class="simple-table-header-color simple-table-header">Descanso (s)</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="1ef7aec4-4ce2-818c-afdb-e2c1e6e500dc"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 1</th><td id="jPid" class="">6</td><td id=":`E{" class="">90</td><td id="UOdI" class="">2/8</td><td id="{scN" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="1ef7aec4-4ce2-81a5-afc7-f78f039cdd81"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 2</th><td id="jPid" class="">7</td><td id=":`E{" class="">90</td><td id="UOdI" class=""></td><td id="{scN" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="1ef7aec4-4ce2-8182-8c71-ca8b47145ede"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 3</th><td id="jPid" class="">6</td><td id=":`E{" class="">90</td><td id="UOdI" class="">1/9</td><td id="{scN" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="1ef7aec4-4ce2-816a-bfb2-c79308ed8de7"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 4</th><td id="jPid" class=""></td><td id=":`E{" class=""></td><td id="UOdI" class=""></td><td id="{scN" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="1ef7aec4-4ce2-816e-b918-eee45a2a0d42"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 5 </th><td id="jPid" class=""></td><td id=":`E{" class=""></td><td id="UOdI" class=""></td><td id="{scN" class=""></td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><h3 id="1ef7aec4-4ce2-817c-a257-fa1764aa0a42" class="">🧠 Notas :</h3></div><div style="display:contents" dir="auto"><blockquote id="1ef7aec4-4ce2-8154-b750-f20be340a3e5" class=""></blockquote></div><div style="display:contents" dir="auto"><hr id="1ef7aec4-4ce2-8176-94c3-c98adc276565"/></div><div style="display:contents" dir="auto"><h2 id="1ef7aec4-4ce2-8141-8242-d93bef390a6e" class="">🏋️ Ejercicio 2 : remo mp pff</h2></div><div style="display:contents" dir="ltr"><table id="1ef7aec4-4ce2-8135-984e-e92d5a7c9b11" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="1ef7aec4-4ce2-8168-96ce-ddccdbe0afee"><th id="uMCc" class="simple-table-header-color simple-table-header"></th><th id="jPid" class="simple-table-header-color simple-table-header">Reps</th><th id=":`E{" class="simple-table-header-color simple-table-header">Peso (kg)</th><th id="UOdI" class="simple-table-header-color simple-table-header">RIR / RPE</th><th id="{scN" class="simple-table-header-color simple-table-header">Descanso (s)</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="1ef7aec4-4ce2-8143-8707-ca159aafa20d"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 1</th><td id="jPid" class="">8 2 últimas apoyo em rack</td><td id=":`E{" class="">40</td><td id="UOdI" class=""></td><td id="{scN" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="1ef7aec4-4ce2-81a9-86de-e366b2fbb45c"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 2</th><td id="jPid" class="">Normal y otro apoyado en banck</td><td id=":`E{" class="">35</td><td id="UOdI" class=""></td><td id="{scN" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="1ef7aec4-4ce2-8185-bb26-da1123788bb6"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 3</th><td id="jPid" class="">Apoyado banco</td><td id=":`E{" class="">30</td><td id="UOdI" class=""></td><td id="{scN" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="1ef7aec4-4ce2-81d5-836d-fa33f8e450a1"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 4</th><td id="jPid" class="">Trapecio encogimiento </td><td id=":`E{" class="">30 20 y x2 unilat</td><td id="UOdI" class=""></td><td id="{scN" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="1ef7aec4-4ce2-814d-8885-e7a515d4e94f"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 5 </th><td id="jPid" class=""></td><td id=":`E{" class=""></td><td id="UOdI" class=""></td><td id="{scN" class=""></td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><h3 id="1ef7aec4-4ce2-8137-a1f3-ced8455b03f7" class="">🧠 Notas :</h3></div><div style="display:contents" dir="auto"><blockquote id="1ef7aec4-4ce2-81a2-bf1f-f1ee45b813cd" class=""></blockquote></div><div style="display:contents" dir="auto"><hr id="1ef7aec4-4ce2-8134-aec9-cf773ff9f0d5"/></div><div style="display:contents" dir="auto"><h2 id="1ef7aec4-4ce2-818f-9d19-eb1a37978242" class="">🏋️ Ejercicio 3 :</h2></div><div style="display:contents" dir="ltr"><table id="1ef7aec4-4ce2-8132-9363-e5f8adb6ddfc" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="1ef7aec4-4ce2-819c-8b07-fa759040a0e3"><th id="uMCc" class="simple-table-header-color simple-table-header"></th><th id="jPid" class="simple-table-header-color simple-table-header">Reps</th><th id=":`E{" class="simple-table-header-color simple-table-header">Peso (kg)</th><th id="UOdI" class="simple-table-header-color simple-table-header">RIR / RPE</th><th id="{scN" class="simple-table-header-color simple-table-header">Descanso (s)</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="1ef7aec4-4ce2-8193-bdea-dc719622a525"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 1</th><td id="jPid" class="">7</td><td id=":`E{" class=""></td><td id="UOdI" class=""></td><td id="{scN" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="1ef7aec4-4ce2-8126-bd98-f8876922045b"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 2</th><td id="jPid" class=""></td><td id=":`E{" class=""></td><td id="UOdI" class=""></td><td id="{scN" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="1ef7aec4-4ce2-8127-9e32-ea04b7bd6a6c"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 3</th><td id="jPid" class=""></td><td id=":`E{" class=""></td><td id="UOdI" class=""></td><td id="{scN" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="1ef7aec4-4ce2-819d-a177-f026a32bb304"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 4</th><td id="jPid" class=""></td><td id=":`E{" class=""></td><td id="UOdI" class=""></td><td id="{scN" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="1ef7aec4-4ce2-81dd-87ed-e4a3c2521e96"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 5 </th><td id="jPid" class=""></td><td id=":`E{" class=""></td><td id="UOdI" class=""></td><td id="{scN" class=""></td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><h3 id="1ef7aec4-4ce2-81bc-95e0-ca39a4fac15d" class="">🧠 Notas :</h3></div><div style="display:contents" dir="auto"><blockquote id="1ef7aec4-4ce2-81c8-83a5-f60beae7627e" class=""></blockquote></div><div style="display:contents" dir="auto"><hr id="1ef7aec4-4ce2-8197-a4a1-ebdf31c00f2e"/></div><div style="display:contents" dir="auto"><h2 id="1ef7aec4-4ce2-8101-a58b-f766a4f73ce8" class="">🏋️ Ejercicio 4 :</h2></div><div style="display:contents" dir="ltr"><table id="1ef7aec4-4ce2-8145-8e75-d2e703c75312" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="1ef7aec4-4ce2-8199-bcce-cb88efea56cc"><th id="uMCc" class="simple-table-header-color simple-table-header"></th><th id="jPid" class="simple-table-header-color simple-table-header">Reps</th><th id=":`E{" class="simple-table-header-color simple-table-header">Peso (kg)</th><th id="UOdI" class="simple-table-header-color simple-table-header">RIR / RPE</th><th id="{scN" class="simple-table-header-color simple-table-header">Descanso (s)</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="1ef7aec4-4ce2-81a3-9c98-e5ff4564ac7d"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 1</th><td id="jPid" class="">7</td><td id=":`E{" class=""></td><td id="UOdI" class=""></td><td id="{scN" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="1ef7aec4-4ce2-8162-9708-f42ad7e8b054"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 2</th><td id="jPid" class=""></td><td id=":`E{" class=""></td><td id="UOdI" class=""></td><td id="{scN" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="1ef7aec4-4ce2-81d3-826c-c5dda7410b7e"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 3</th><td id="jPid" class=""></td><td id=":`E{" class=""></td><td id="UOdI" class=""></td><td id="{scN" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="1ef7aec4-4ce2-8172-824b-d319b843869e"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 4</th><td id="jPid" class=""></td><td id=":`E{" class=""></td><td id="UOdI" class=""></td><td id="{scN" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="1ef7aec4-4ce2-8131-95c9-f546e0cb2403"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 5 </th><td id="jPid" class=""></td><td id=":`E{" class=""></td><td id="UOdI" class=""></td><td id="{scN" class=""></td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><h3 id="1ef7aec4-4ce2-8169-b596-f58a84fa74a7" class="">🧠 Notas :</h3></div><div style="display:contents" dir="auto"><blockquote id="1ef7aec4-4ce2-81fb-a6a1-e4c628fcef7e" class=""></blockquote></div><div style="display:contents" dir="auto"><hr id="1ef7aec4-4ce2-8183-a367-e39a94eaad40"/></div><div style="display:contents" dir="auto"><h2 id="1ef7aec4-4ce2-81c8-a8a6-e33605000efb" class="">🏋️ Ejercicio 5 :</h2></div><div style="display:contents" dir="ltr"><table id="1ef7aec4-4ce2-8157-9dc9-fd13936d2ed6" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="1ef7aec4-4ce2-8114-b6e1-cfc695e744f5"><th id="uMCc" class="simple-table-header-color simple-table-header"></th><th id="jPid" class="simple-table-header-color simple-table-header">Reps</th><th id=":`E{" class="simple-table-header-color simple-table-header">Peso (kg)</th><th id="UOdI" class="simple-table-header-color simple-table-header">RIR / RPE</th><th id="{scN" class="simple-table-header-color simple-table-header">Descanso (s)</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="1ef7aec4-4ce2-813b-8dae-d8034acf43fa"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 1</th><td id="jPid" class="">7</td><td id=":`E{" class=""></td><td id="UOdI" class=""></td><td id="{scN" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="1ef7aec4-4ce2-814d-b192-ce069bbfc5d0"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 2</th><td id="jPid" class=""></td><td id=":`E{" class=""></td><td id="UOdI" class=""></td><td id="{scN" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="1ef7aec4-4ce2-8125-8924-e8b7d64bebc2"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 3</th><td id="jPid" class=""></td><td id=":`E{" class=""></td><td id="UOdI" class=""></td><td id="{scN" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="1ef7aec4-4ce2-81fd-9a71-f71ffddfce5a"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 4</th><td id="jPid" class=""></td><td id=":`E{" class=""></td><td id="UOdI" class=""></td><td id="{scN" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="1ef7aec4-4ce2-81cc-a448-c5f33febee62"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 5 </th><td id="jPid" class=""></td><td id=":`E{" class=""></td><td id="UOdI" class=""></td><td id="{scN" class=""></td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><h3 id="1ef7aec4-4ce2-818b-a73c-e2e4ffd4ac31" class="">🧠 Notas :</h3></div><div style="display:contents" dir="auto"><blockquote id="1ef7aec4-4ce2-81d9-9f58-ebb593f6634f" class=""></blockquote></div><div style="display:contents" dir="auto"><hr id="1ef7aec4-4ce2-8105-89d5-fe5b23e31b98"/></div><div style="display:contents" dir="auto"><h2 id="1ef7aec4-4ce2-8168-9985-cf3671026074" class="">🏋️ Ejercicio 6 :</h2></div><div style="display:contents" dir="ltr"><table id="1ef7aec4-4ce2-81d6-b519-d490ebd1ed77" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="1ef7aec4-4ce2-8161-bded-f6a469aeac29"><th id="uMCc" class="simple-table-header-color simple-table-header"></th><th id="jPid" class="simple-table-header-color simple-table-header">Reps</th><th id=":`E{" class="simple-table-header-color simple-table-header">Peso (kg)</th><th id="UOdI" class="simple-table-header-color simple-table-header">RIR / RPE</th><th id="{scN" class="simple-table-header-color simple-table-header">Descanso (s)</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="1ef7aec4-4ce2-81bb-bb88-e8df1e75be9e"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 1</th><td id="jPid" class="">7</td><td id=":`E{" class=""></td><td id="UOdI" class=""></td><td id="{scN" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="1ef7aec4-4ce2-81b3-812b-cc4bcc43ae8c"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 2</th><td id="jPid" class=""></td><td id=":`E{" class=""></td><td id="UOdI" class=""></td><td id="{scN" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="1ef7aec4-4ce2-81c3-a331-ebb12f4fce0f"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 3</th><td id="jPid" class=""></td><td id=":`E{" class=""></td><td id="UOdI" class=""></td><td id="{scN" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="1ef7aec4-4ce2-81ff-817a-c6c49570b1ff"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 4</th><td id="jPid" class=""></td><td id=":`E{" class=""></td><td id="UOdI" class=""></td><td id="{scN" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="1ef7aec4-4ce2-8189-a37a-c94abda878ca"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 5 </th><td id="jPid" class=""></td><td id=":`E{" class=""></td><td id="UOdI" class=""></td><td id="{scN" class=""></td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><h3 id="1ef7aec4-4ce2-81f7-899e-de0d544c5967" class="">🧠 Notas :</h3></div><div style="display:contents" dir="auto"><blockquote id="1ef7aec4-4ce2-81e4-8d89-d61d1d1cf9ec" class=""></blockquote></div><div style="display:contents" dir="auto"><hr id="1ef7aec4-4ce2-8115-9408-ec37a4ef7a97"/></div><div style="display:contents" dir="auto"><h2 id="1ef7aec4-4ce2-816a-a39a-f189afc726e6" class="">🏋️ Ejercicio 7:</h2></div><div style="display:contents" dir="ltr"><table id="1ef7aec4-4ce2-81f0-a782-f3049fdfa124" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="1ef7aec4-4ce2-810f-b897-e4fe8869c0dd"><th id="uMCc" class="simple-table-header-color simple-table-header"></th><th id="jPid" class="simple-table-header-color simple-table-header">Reps</th><th id=":`E{" class="simple-table-header-color simple-table-header">Peso (kg)</th><th id="UOdI" class="simple-table-header-color simple-table-header">RIR / RPE</th><th id="{scN" class="simple-table-header-color simple-table-header">Descanso (s)</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="1ef7aec4-4ce2-81cd-a285-f6dc59e32891"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 1</th><td id="jPid" class="">7</td><td id=":`E{" class=""></td><td id="UOdI" class=""></td><td id="{scN" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="1ef7aec4-4ce2-81af-a5c5-f5375c1dbe80"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 2</th><td id="jPid" class=""></td><td id=":`E{" class=""></td><td id="UOdI" class=""></td><td id="{scN" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="1ef7aec4-4ce2-81bb-aa79-e04cc0a830ef"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 3</th><td id="jPid" class=""></td><td id=":`E{" class=""></td><td id="UOdI" class=""></td><td id="{scN" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="1ef7aec4-4ce2-81fe-a48f-e170571b02a2"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 4</th><td id="jPid" class=""></td><td id=":`E{" class=""></td><td id="UOdI" class=""></td><td id="{scN" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="1ef7aec4-4ce2-8187-bbae-d55b071ccbcf"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 5 </th><td id="jPid" class=""></td><td id=":`E{" class=""></td><td id="UOdI" class=""></td><td id="{scN" class=""></td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><h3 id="1ef7aec4-4ce2-8160-99dd-f25e0c9aa190" class="">🧠 Notas :</h3></div><div style="display:contents" dir="auto"><blockquote id="1ef7aec4-4ce2-8185-b64c-cf61ac5795a3" class=""></blockquote></div><div style="display:contents" dir="auto"><hr id="1ef7aec4-4ce2-81f6-a3c0-fba00d060704"/></div><div style="display:contents" dir="auto"><h2 id="1ef7aec4-4ce2-81ef-aae4-d91b2e548b46" class="">🏋️ Ejercicio 8:</h2></div><div style="display:contents" dir="ltr"><table id="1ef7aec4-4ce2-8171-adc6-d4a5fd282e11" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="1ef7aec4-4ce2-81ea-868a-e879ad65938b"><th id="uMCc" class="simple-table-header-color simple-table-header"></th><th id="jPid" class="simple-table-header-color simple-table-header">Reps</th><th id=":`E{" class="simple-table-header-color simple-table-header">Peso (kg)</th><th id="UOdI" class="simple-table-header-color simple-table-header">RIR / RPE</th><th id="{scN" class="simple-table-header-color simple-table-header">Descanso (s)</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="1ef7aec4-4ce2-8177-a2f9-ed9c1b44e326"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 1</th><td id="jPid" class="">7</td><td id=":`E{" class=""></td><td id="UOdI" class=""></td><td id="{scN" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="1ef7aec4-4ce2-8185-96c3-fc73bec56108"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 2</th><td id="jPid" class=""></td><td id=":`E{" class=""></td><td id="UOdI" class=""></td><td id="{scN" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="1ef7aec4-4ce2-8129-b9aa-d85034da46b9"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 3</th><td id="jPid" class=""></td><td id=":`E{" class=""></td><td id="UOdI" class=""></td><td id="{scN" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="1ef7aec4-4ce2-81a5-862e-eeeb0dbd6d17"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 4</th><td id="jPid" class=""></td><td id=":`E{" class=""></td><td id="UOdI" class=""></td><td id="{scN" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="1ef7aec4-4ce2-81ae-bd4e-ccd826242bae"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 5 </th><td id="jPid" class=""></td><td id=":`E{" class=""></td><td id="UOdI" class=""></td><td id="{scN" class=""></td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><h3 id="1ef7aec4-4ce2-81d7-ab1e-d0c90984d24b" class="">🧠 Notas :</h3></div><div style="display:contents" dir="auto"><blockquote id="1ef7aec4-4ce2-81af-894d-d68a9d474462" class=""></blockquote></div><div style="display:contents" dir="auto"><hr id="1ef7aec4-4ce2-8137-8918-f98c71565826"/></div><div style="display:contents" dir="auto"><p id="1ef7aec4-4ce2-8187-8cc5-d1837bccec9d" class="">
+</p></div><div style="display:contents" dir="auto"><p id="1ef7aec4-4ce2-81f6-abb0-f8ccd2373e52" class="">
+</p></div><div style="display:contents" dir="auto"><p id="1ef7aec4-4ce2-812b-ae78-c7d064f5438f" class=""><a href="https://www.instagram.com/alexfit.ai/">Este Sistema pertenece a la versión completa del Diario AlexFit.ai.</a></p></div><div style="display:contents" dir="auto"><p id="1ef7aec4-4ce2-8137-b123-d7d89a5de174" class="">📩 Escríbeme para desbloquear todo lo que tengo preparado para ti. <strong><a href="https://www.instagram.com/alexfit.ai/">@alexfit.ai</a></strong></p></div><div style="display:contents" dir="auto"><p id="1ef7aec4-4ce2-813d-b88e-ed2ed683dc94" class="">
+</p></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

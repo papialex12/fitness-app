@@ -1,0 +1,716 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Pierna 14</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="2517aec4-4ce2-8117-82b6-e7eb951a32a8" class="page sans"><header><h1 class="page-title" dir="auto">Pierna 14</h1><p class="page-description" dir="auto"></p><table class="properties"><tbody><tr class="property-row property-row-created_time"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/clock_gray.svg" style="width:14px;height:14px;display:block"/></span>Creada</th><td><time>@17 de agosto de 2025 0:13</time></td></tr><tr class="property-row property-row-checkbox"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/checkmark-square_gray.svg" style="width:14px;height:14px;display:block"/></span>Archivar</th><td><div class="checkbox checkbox-on"></div></td></tr><tr class="property-row property-row-number"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/clock_gray.svg" style="width:14px;height:14px;display:block"/></span>Duración (minutos)</th><td>50</td></tr></tbody></table></header><div class="page-body"><div style="display:contents" dir="auto"><p id="2517aec4-4ce2-8151-a6ac-dab198478f84" class=""><strong><span style="border-bottom:0.05em solid">ENTRENAMIENTO DE: pata</span></strong></p></div><div style="display:contents" dir="auto"><p id="2517aec4-4ce2-811f-9075-fd5cb7008abf" class=""><strong>BLOQUE:</strong></p></div><div style="display:contents" dir="auto"><p id="2517aec4-4ce2-818b-95cf-eaa40b9d1f48" class=""><strong>MESOCICLO:</strong></p></div><div style="display:contents" dir="auto"><p id="2517aec4-4ce2-8105-acd6-e514ff73ebfc" class=""><strong>MICROCICLO:</strong></p></div><div style="display:contents" dir="auto"><h2 id="2517aec4-4ce2-81e7-99ff-d4a0574236e5" class="">🏋️ Ejercicio 1 :hacka </h2></div><div style="display:contents" dir="ltr"><table id="2517aec4-4ce2-81fc-b423-fcb91eeac68b" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="2517aec4-4ce2-811e-8f88-c401c3621888"><th id="uMCc" class="simple-table-header-color simple-table-header"></th><th id="jPid" class="simple-table-header-color simple-table-header">Reps</th><th id=":`E{" class="simple-table-header-color simple-table-header">Peso (kg)</th><th id="UOdI" class="simple-table-header-color simple-table-header">RIR / RPE</th><th id="{scN" class="simple-table-header-color simple-table-header">Descanso (s)</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="2517aec4-4ce2-8152-a3b1-c790c31a124d"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 1</th><td id="jPid" class="">8</td><td id=":`E{" class="">120</td><td id="UOdI" class=""></td><td id="{scN" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="2517aec4-4ce2-81f3-ab68-f41098715169"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 2</th><td id="jPid" class="">7</td><td id=":`E{" class="">130</td><td id="UOdI" class=""></td><td id="{scN" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="2517aec4-4ce2-818d-a95f-fbdc095a6b47"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 3</th><td id="jPid" class="">6 raw</td><td id=":`E{" class="">90</td><td id="UOdI" class=""></td><td id="{scN" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="2517aec4-4ce2-81d9-be53-e56d19fd444e"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 4</th><td id="jPid" class=""></td><td id=":`E{" class=""></td><td id="UOdI" class=""></td><td id="{scN" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="2517aec4-4ce2-8115-9ba9-dd4ca8f7d08f"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 5 </th><td id="jPid" class=""></td><td id=":`E{" class=""></td><td id="UOdI" class=""></td><td id="{scN" class=""></td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><h3 id="2517aec4-4ce2-8151-a877-d5835c55ee16" class="">🧠 Notas :</h3></div><div style="display:contents" dir="auto"><blockquote id="2517aec4-4ce2-8131-931e-f04aa8c19f56" class=""></blockquote></div><div style="display:contents" dir="auto"><hr id="2517aec4-4ce2-8103-bf92-ec29b1f42502"/></div><div style="display:contents" dir="auto"><h2 id="2517aec4-4ce2-8114-96e2-d2b796ed971c" class="">🏋️ Ejercicio 2 : ext cuad</h2></div><div style="display:contents" dir="ltr"><table id="2517aec4-4ce2-817b-aa53-f8381a7580d4" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="2517aec4-4ce2-81d4-949f-d9be87045fa9"><th id="uMCc" class="simple-table-header-color simple-table-header"></th><th id="jPid" class="simple-table-header-color simple-table-header">Reps</th><th id=":`E{" class="simple-table-header-color simple-table-header">Peso (kg)</th><th id="UOdI" class="simple-table-header-color simple-table-header">RIR / RPE</th><th id="{scN" class="simple-table-header-color simple-table-header">Descanso (s)</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="2517aec4-4ce2-81de-af48-eb206dbdc076"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 1</th><td id="jPid" class="">11</td><td id=":`E{" class="">65x2</td><td id="UOdI" class=""></td><td id="{scN" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="2517aec4-4ce2-8116-b343-dd4da3ff3bd7"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 2</th><td id="jPid" class="">26</td><td id=":`E{" class="">Dropset 80 65 y 52</td><td id="UOdI" class=""></td><td id="{scN" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="2517aec4-4ce2-8168-993f-d3384d05d280"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 3</th><td id="jPid" class=""></td><td id=":`E{" class=""></td><td id="UOdI" class=""></td><td id="{scN" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="2517aec4-4ce2-8139-bf4c-d62c909e4287"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 4</th><td id="jPid" class=""></td><td id=":`E{" class=""></td><td id="UOdI" class=""></td><td id="{scN" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="2517aec4-4ce2-81ed-aaab-c1e4b542978e"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 5 </th><td id="jPid" class=""></td><td id=":`E{" class=""></td><td id="UOdI" class=""></td><td id="{scN" class=""></td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><h3 id="2517aec4-4ce2-812b-8b62-f04eb20202ef" class="">🧠 Notas :</h3></div><div style="display:contents" dir="auto"><blockquote id="2517aec4-4ce2-81c3-9cd1-f481622f7d94" class=""></blockquote></div><div style="display:contents" dir="auto"><hr id="2517aec4-4ce2-81c6-916e-d2e4a1859b27"/></div><div style="display:contents" dir="auto"><h2 id="2517aec4-4ce2-8166-883e-e7696fde563d" class="">🏋️ Ejercicio 3 :mp sq pies alineados barra mucho mejor </h2></div><div style="display:contents" dir="ltr"><table id="2517aec4-4ce2-81a1-b237-c353ec712426" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="2517aec4-4ce2-81b4-8c5d-e534cc194c98"><th id="uMCc" class="simple-table-header-color simple-table-header"></th><th id="jPid" class="simple-table-header-color simple-table-header">Reps</th><th id=":`E{" class="simple-table-header-color simple-table-header">Peso (kg)</th><th id="UOdI" class="simple-table-header-color simple-table-header">RIR / RPE</th><th id="{scN" class="simple-table-header-color simple-table-header">Descanso (s)</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="2517aec4-4ce2-81ed-8003-d2947c518ce9"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 1</th><td id="jPid" class="">8</td><td id=":`E{" class="">80</td><td id="UOdI" class="">3/8</td><td id="{scN" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="2517aec4-4ce2-8180-b3da-e745a1b254e0"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 2</th><td id="jPid" class="">8</td><td id=":`E{" class="">90</td><td id="UOdI" class="">2/8 puto tensión brazo</td><td id="{scN" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="2517aec4-4ce2-8108-bc93-ecafad69873a"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 3</th><td id="jPid" class=""></td><td id=":`E{" class=""></td><td id="UOdI" class=""></td><td id="{scN" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="2517aec4-4ce2-81c0-a6f2-fe15a29115b0"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 4</th><td id="jPid" class=""></td><td id=":`E{" class=""></td><td id="UOdI" class=""></td><td id="{scN" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="2517aec4-4ce2-811c-8e51-cab1838058c4"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 5 </th><td id="jPid" class=""></td><td id=":`E{" class=""></td><td id="UOdI" class=""></td><td id="{scN" class=""></td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><h3 id="2517aec4-4ce2-81bd-93ac-e3943891e2cd" class="">🧠 Notas :</h3></div><div style="display:contents" dir="auto"><blockquote id="2517aec4-4ce2-815e-9d76-fce869aaf474" class=""></blockquote></div><div style="display:contents" dir="auto"><hr id="2517aec4-4ce2-817f-92a1-c60b8e05126d"/></div><div style="display:contents" dir="auto"><h2 id="2517aec4-4ce2-814f-a349-c2a3c80f1a20" class="">🏋️ Ejercicio 4 :</h2></div><div style="display:contents" dir="ltr"><table id="2517aec4-4ce2-81ef-92a1-d79995e172c4" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="2517aec4-4ce2-8160-b023-c0602e07e4f9"><th id="uMCc" class="simple-table-header-color simple-table-header"></th><th id="jPid" class="simple-table-header-color simple-table-header">Reps</th><th id=":`E{" class="simple-table-header-color simple-table-header">Peso (kg)</th><th id="UOdI" class="simple-table-header-color simple-table-header">RIR / RPE</th><th id="{scN" class="simple-table-header-color simple-table-header">Descanso (s)</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="2517aec4-4ce2-8185-8731-fbb13148455a"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 1</th><td id="jPid" class="">7</td><td id=":`E{" class=""></td><td id="UOdI" class=""></td><td id="{scN" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="2517aec4-4ce2-817f-8fda-caeaec7d6eb8"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 2</th><td id="jPid" class=""></td><td id=":`E{" class=""></td><td id="UOdI" class=""></td><td id="{scN" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="2517aec4-4ce2-81e6-a72b-f3b481d7dc39"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 3</th><td id="jPid" class=""></td><td id=":`E{" class=""></td><td id="UOdI" class=""></td><td id="{scN" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="2517aec4-4ce2-81e7-a51f-ee6cafadc24e"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 4</th><td id="jPid" class=""></td><td id=":`E{" class=""></td><td id="UOdI" class=""></td><td id="{scN" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="2517aec4-4ce2-8182-b8e9-d1f1102e1c19"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 5 </th><td id="jPid" class=""></td><td id=":`E{" class=""></td><td id="UOdI" class=""></td><td id="{scN" class=""></td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><h3 id="2517aec4-4ce2-81ce-83d6-fa4b1e8110d2" class="">🧠 Notas :</h3></div><div style="display:contents" dir="auto"><blockquote id="2517aec4-4ce2-8124-93aa-c7beb5c41778" class=""></blockquote></div><div style="display:contents" dir="auto"><hr id="2517aec4-4ce2-81f7-9bd5-f2c71e05572e"/></div><div style="display:contents" dir="auto"><h2 id="2517aec4-4ce2-81f9-b389-f142ee088b1e" class="">🏋️ Ejercicio 5 :</h2></div><div style="display:contents" dir="ltr"><table id="2517aec4-4ce2-8137-9ca4-d5ca60e2ef62" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="2517aec4-4ce2-814e-bb7b-f0c21736360f"><th id="uMCc" class="simple-table-header-color simple-table-header"></th><th id="jPid" class="simple-table-header-color simple-table-header">Reps</th><th id=":`E{" class="simple-table-header-color simple-table-header">Peso (kg)</th><th id="UOdI" class="simple-table-header-color simple-table-header">RIR / RPE</th><th id="{scN" class="simple-table-header-color simple-table-header">Descanso (s)</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="2517aec4-4ce2-81d2-9e21-d01926ae406e"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 1</th><td id="jPid" class="">7</td><td id=":`E{" class=""></td><td id="UOdI" class=""></td><td id="{scN" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="2517aec4-4ce2-81b7-b23a-e7ec15525db0"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 2</th><td id="jPid" class=""></td><td id=":`E{" class=""></td><td id="UOdI" class=""></td><td id="{scN" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="2517aec4-4ce2-8151-8699-dc6238010d3b"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 3</th><td id="jPid" class=""></td><td id=":`E{" class=""></td><td id="UOdI" class=""></td><td id="{scN" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="2517aec4-4ce2-81ee-a5a1-e9edf549299a"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 4</th><td id="jPid" class=""></td><td id=":`E{" class=""></td><td id="UOdI" class=""></td><td id="{scN" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="2517aec4-4ce2-8126-a213-d8c55bd7a6f9"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 5 </th><td id="jPid" class=""></td><td id=":`E{" class=""></td><td id="UOdI" class=""></td><td id="{scN" class=""></td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><h3 id="2517aec4-4ce2-8136-8fba-c57b562d3e2d" class="">🧠 Notas :</h3></div><div style="display:contents" dir="auto"><blockquote id="2517aec4-4ce2-81e9-bee0-d576f7d29811" class=""></blockquote></div><div style="display:contents" dir="auto"><hr id="2517aec4-4ce2-8104-a8bf-d116b8c580ea"/></div><div style="display:contents" dir="auto"><h2 id="2517aec4-4ce2-81ee-8848-c7526f043542" class="">🏋️ Ejercicio 6 :</h2></div><div style="display:contents" dir="ltr"><table id="2517aec4-4ce2-81a0-84b6-dbef1f5ada3a" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="2517aec4-4ce2-812a-b2a3-f59b7841a257"><th id="uMCc" class="simple-table-header-color simple-table-header"></th><th id="jPid" class="simple-table-header-color simple-table-header">Reps</th><th id=":`E{" class="simple-table-header-color simple-table-header">Peso (kg)</th><th id="UOdI" class="simple-table-header-color simple-table-header">RIR / RPE</th><th id="{scN" class="simple-table-header-color simple-table-header">Descanso (s)</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="2517aec4-4ce2-8150-85de-f7296c9f991d"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 1</th><td id="jPid" class="">7</td><td id=":`E{" class=""></td><td id="UOdI" class=""></td><td id="{scN" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="2517aec4-4ce2-81b7-84e2-ee07308b40c6"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 2</th><td id="jPid" class=""></td><td id=":`E{" class=""></td><td id="UOdI" class=""></td><td id="{scN" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="2517aec4-4ce2-81c8-be66-df872b7be35c"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 3</th><td id="jPid" class=""></td><td id=":`E{" class=""></td><td id="UOdI" class=""></td><td id="{scN" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="2517aec4-4ce2-814d-a908-ec1620326996"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 4</th><td id="jPid" class=""></td><td id=":`E{" class=""></td><td id="UOdI" class=""></td><td id="{scN" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="2517aec4-4ce2-81c0-95e1-e929d9d8e7d9"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 5 </th><td id="jPid" class=""></td><td id=":`E{" class=""></td><td id="UOdI" class=""></td><td id="{scN" class=""></td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><h3 id="2517aec4-4ce2-81ef-b984-c0ff108b3971" class="">🧠 Notas :</h3></div><div style="display:contents" dir="auto"><blockquote id="2517aec4-4ce2-816f-aa74-e4c63cf40700" class=""></blockquote></div><div style="display:contents" dir="auto"><hr id="2517aec4-4ce2-8186-bbc2-db387a3525f0"/></div><div style="display:contents" dir="auto"><h2 id="2517aec4-4ce2-810d-9ee2-de2962e050cb" class="">🏋️ Ejercicio 7:</h2></div><div style="display:contents" dir="ltr"><table id="2517aec4-4ce2-81ba-b43a-edf5f41a55fc" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="2517aec4-4ce2-81ed-b5ef-c15b22a51df1"><th id="uMCc" class="simple-table-header-color simple-table-header"></th><th id="jPid" class="simple-table-header-color simple-table-header">Reps</th><th id=":`E{" class="simple-table-header-color simple-table-header">Peso (kg)</th><th id="UOdI" class="simple-table-header-color simple-table-header">RIR / RPE</th><th id="{scN" class="simple-table-header-color simple-table-header">Descanso (s)</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="2517aec4-4ce2-81e3-816b-dc9bd335e763"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 1</th><td id="jPid" class="">7</td><td id=":`E{" class=""></td><td id="UOdI" class=""></td><td id="{scN" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="2517aec4-4ce2-818c-92dd-cec8e3fbf820"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 2</th><td id="jPid" class=""></td><td id=":`E{" class=""></td><td id="UOdI" class=""></td><td id="{scN" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="2517aec4-4ce2-8151-b4d7-df8c0e8da4e5"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 3</th><td id="jPid" class=""></td><td id=":`E{" class=""></td><td id="UOdI" class=""></td><td id="{scN" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="2517aec4-4ce2-8157-ae28-fe85d07d68fa"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 4</th><td id="jPid" class=""></td><td id=":`E{" class=""></td><td id="UOdI" class=""></td><td id="{scN" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="2517aec4-4ce2-814f-b05a-d0dffa3817a2"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 5 </th><td id="jPid" class=""></td><td id=":`E{" class=""></td><td id="UOdI" class=""></td><td id="{scN" class=""></td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><h3 id="2517aec4-4ce2-810b-a7c6-dd94ed86311e" class="">🧠 Notas :</h3></div><div style="display:contents" dir="auto"><blockquote id="2517aec4-4ce2-81b5-89ae-fb82276765b9" class=""></blockquote></div><div style="display:contents" dir="auto"><hr id="2517aec4-4ce2-8143-b4b7-ce65fbe5566c"/></div><div style="display:contents" dir="auto"><h2 id="2517aec4-4ce2-81d4-a1db-fedb564e8997" class="">🏋️ Ejercicio 8:</h2></div><div style="display:contents" dir="ltr"><table id="2517aec4-4ce2-8191-9a84-e4a369ea1dd8" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="2517aec4-4ce2-81c1-8fda-debaf4559c92"><th id="uMCc" class="simple-table-header-color simple-table-header"></th><th id="jPid" class="simple-table-header-color simple-table-header">Reps</th><th id=":`E{" class="simple-table-header-color simple-table-header">Peso (kg)</th><th id="UOdI" class="simple-table-header-color simple-table-header">RIR / RPE</th><th id="{scN" class="simple-table-header-color simple-table-header">Descanso (s)</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="2517aec4-4ce2-81f2-b511-f2d564c7887b"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 1</th><td id="jPid" class="">7</td><td id=":`E{" class=""></td><td id="UOdI" class=""></td><td id="{scN" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="2517aec4-4ce2-8147-a516-fd62a4bf732a"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 2</th><td id="jPid" class=""></td><td id=":`E{" class=""></td><td id="UOdI" class=""></td><td id="{scN" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="2517aec4-4ce2-81eb-a2d9-ff3ff205fc81"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 3</th><td id="jPid" class=""></td><td id=":`E{" class=""></td><td id="UOdI" class=""></td><td id="{scN" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="2517aec4-4ce2-816c-9077-ed632362a08a"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 4</th><td id="jPid" class=""></td><td id=":`E{" class=""></td><td id="UOdI" class=""></td><td id="{scN" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="2517aec4-4ce2-813e-b145-e851d5bef493"><th id="uMCc" class="simple-table-header-color simple-table-header">Serie 5 </th><td id="jPid" class=""></td><td id=":`E{" class=""></td><td id="UOdI" class=""></td><td id="{scN" class=""></td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><h3 id="2517aec4-4ce2-813f-be39-d972880e1333" class="">🧠 Notas :</h3></div><div style="display:contents" dir="auto"><blockquote id="2517aec4-4ce2-81d0-bf5c-dabbcc241e26" class=""></blockquote></div><div style="display:contents" dir="auto"><hr id="2517aec4-4ce2-81b5-94b6-e045cba6538d"/></div><div style="display:contents" dir="auto"><p id="2517aec4-4ce2-81e6-a70f-f6e8c2637e3a" class="">
+</p></div><div style="display:contents" dir="auto"><p id="2517aec4-4ce2-819d-8336-fc605e6802f3" class="">
+</p></div><div style="display:contents" dir="auto"><p id="2517aec4-4ce2-810c-9282-f031f7aa76f7" class=""><a href="https://www.instagram.com/alexfit.ai/">Este Sistema pertenece a la versión completa del Diario AlexFit.ai.</a></p></div><div style="display:contents" dir="auto"><p id="2517aec4-4ce2-81ec-9c85-fc25ae9c13fb" class="">📩 Escríbeme para desbloquear todo lo que tengo preparado para ti. <strong><a href="https://www.instagram.com/alexfit.ai/">@alexfit.ai</a></strong></p></div><div style="display:contents" dir="auto"><p id="2517aec4-4ce2-81e1-a9a1-f8eba9eb849d" class="">
+</p></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
