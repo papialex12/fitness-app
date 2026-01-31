@@ -1,0 +1,434 @@
+// ============================================
+// ELITE FITNESS TRACKER - Prisma Schema
+// ============================================
+// Stack: Next.js + Supabase (Postgres) + Prisma ORM
+// Author: Alex Aguirre x Antigravity
+// Version: MVP v1.0
+// ============================================
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ============================================
+// CORE ENTITIES
+// ============================================
+
+/// User authenticated via Supabase Auth
+model User {
+  id        String   @id @default(uuid()) @db.Uuid
+  email     String   @unique
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  // Relations
+  profile       Profile?
+  plans         Plan[]
+  workoutLogs   WorkoutLog[]
+  checkIns      CheckInWeekly[]
+  dailyMetrics  MetricDaily[]
+  media         Media[]
+
+  @@map("users")
+}
+
+/// User profile with goals, preferences, and training limits
+model Profile {
+  id                String   @id @default(uuid()) @db.Uuid
+  userId            String   @unique @map("user_id") @db.Uuid
+  
+  // Basic info
+  displayName       String?  @map("display_name")
+  heightCm          Float?   @map("height_cm")
+  birthDate         DateTime? @map("birth_date")
+  
+  // Goals (from onboarding)
+  goalType          GoalType @default(RECOMPOSITION) @map("goal_type")
+  targetWeightKg    Float?   @map("target_weight_kg")
+  targetBodyFatPct  Float?   @map("target_body_fat_pct")
+  weeklyDeficitKcal Int?     @map("weekly_deficit_kcal")
+  proteinTargetG    Int?     @map("protein_target_g")
+  
+  // Training preferences
+  trainingDaysPerWeek Int    @default(4) @map("training_days_per_week")
+  sessionDurationMin  Int    @default(90) @map("session_duration_min")
+  experienceLevel     ExperienceLevel @default(ADVANCED) @map("experience_level")
+  
+  // Limits and constraints
+  maxRirTarget      Int      @default(2) @map("max_rir_target")
+  minSleepHours     Float    @default(7) @map("min_sleep_hours")
+  maxFatigueScore   Int      @default(8) @map("max_fatigue_score")
+  
+  // Timestamps
+  createdAt         DateTime @default(now()) @map("created_at")
+  updatedAt         DateTime @updatedAt @map("updated_at")
+
+  // Relations
+  user              User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("profiles")
+}
+
+/// Training plan (mesocycle/microcycle)
+model Plan {
+  id              String     @id @default(uuid()) @db.Uuid
+  userId          String     @map("user_id") @db.Uuid
+  
+  name            String
+  description     String?
+  
+  // Plan structure
+  planType        PlanType   @default(MICROCYCLE) @map("plan_type")
+  startDate       DateTime   @map("start_date")
+  endDate         DateTime?  @map("end_date")
+  weekNumber      Int        @default(1) @map("week_number")
+  
+  // Status
+  isActive        Boolean    @default(true) @map("is_active")
+  isDeload        Boolean    @default(false) @map("is_deload")
+  
+  // Timestamps
+  createdAt       DateTime   @default(now()) @map("created_at")
+  updatedAt       DateTime   @updatedAt @map("updated_at")
+
+  // Relations
+  user            User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  sessions        SessionTemplate[]
+
+  @@map("plans")
+}
+
+/// Session template (planned workout structure)
+model SessionTemplate {
+  id              String     @id @default(uuid()) @db.Uuid
+  planId          String     @map("plan_id") @db.Uuid
+  
+  name            String
+  dayOfWeek       Int        @map("day_of_week") // 1=Monday, 7=Sunday
+  sessionType     SessionType @default(STRENGTH) @map("session_type")
+  
+  // Target metrics
+  targetDurationMin Int      @default(90) @map("target_duration_min")
+  targetRir         Int      @default(2) @map("target_rir")
+  
+  // Order and notes
+  orderIndex      Int        @default(0) @map("order_index")
+  notes           String?
+  
+  // Timestamps
+  createdAt       DateTime   @default(now()) @map("created_at")
+  updatedAt       DateTime   @updatedAt @map("updated_at")
+
+  // Relations
+  plan            Plan       @relation(fields: [planId], references: [id], onDelete: Cascade)
+  workoutLogs     WorkoutLog[]
+
+  @@map("session_templates")
+}
+
+/// Workout log (executed session)
+model WorkoutLog {
+  id                  String      @id @default(uuid()) @db.Uuid
+  userId              String      @map("user_id") @db.Uuid
+  sessionTemplateId   String?     @map("session_template_id") @db.Uuid
+  
+  // Execution data
+  date                DateTime    @default(now())
+  startTime           DateTime?   @map("start_time")
+  endTime             DateTime?   @map("end_time")
+  actualDurationMin   Int?        @map("actual_duration_min")
+  
+  // Subjective metrics
+  perceivedExertion   Int?        @map("perceived_exertion") // 1-10 RPE
+  energyLevel         Int?        @map("energy_level") // 1-10
+  pumpQuality         Int?        @map("pump_quality") // 1-10
+  
+  // Notes and flags
+  notes               String?
+  wasDeload           Boolean     @default(false) @map("was_deload")
+  wasSkipped          Boolean     @default(false) @map("was_skipped")
+  skipReason          String?     @map("skip_reason")
+  
+  // Timestamps
+  createdAt           DateTime    @default(now()) @map("created_at")
+  updatedAt           DateTime    @updatedAt @map("updated_at")
+
+  // Relations
+  user                User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  sessionTemplate     SessionTemplate? @relation(fields: [sessionTemplateId], references: [id])
+  sets                SetLog[]
+
+  @@map("workout_logs")
+}
+
+/// Exercise library
+model Exercise {
+  id              String       @id @default(uuid()) @db.Uuid
+  
+  name            String       @unique
+  category        ExerciseCategory @default(COMPOUND)
+  muscleGroups    String[]     @map("muscle_groups") // Array of muscle groups
+  
+  // Default parameters
+  defaultRestSec  Int          @default(120) @map("default_rest_sec")
+  defaultRirMin   Int          @default(1) @map("default_rir_min")
+  defaultRirMax   Int          @default(3) @map("default_rir_max")
+  
+  // Metadata
+  instructions    String?
+  videoUrl        String?      @map("video_url")
+  isCustom        Boolean      @default(false) @map("is_custom")
+  createdByUserId String?      @map("created_by_user_id") @db.Uuid
+  
+  // Timestamps
+  createdAt       DateTime     @default(now()) @map("created_at")
+  updatedAt       DateTime     @updatedAt @map("updated_at")
+
+  // Relations
+  sets            SetLog[]
+
+  @@map("exercises")
+}
+
+/// Set log (individual set within a workout)
+model SetLog {
+  id              String      @id @default(uuid()) @db.Uuid
+  workoutLogId    String      @map("workout_log_id") @db.Uuid
+  exerciseId      String      @map("exercise_id") @db.Uuid
+  
+  // Set data
+  setNumber       Int         @map("set_number")
+  setType         SetType     @default(WORKING) @map("set_type")
+  
+  // Performance metrics
+  reps            Int?
+  weightKg        Float?      @map("weight_kg")
+  rir             Int?        // Reps In Reserve (0-5)
+  rpe             Float?      // Rate of Perceived Exertion (6-10)
+  
+  // Timing
+  restSecAfter    Int?        @map("rest_sec_after")
+  tempoEccentric  Int?        @map("tempo_eccentric")
+  tempoConcentric Int?        @map("tempo_concentric")
+  
+  // Notes
+  notes           String?
+  wasDropSet      Boolean     @default(false) @map("was_drop_set")
+  wasMyo          Boolean     @default(false) @map("was_myo")
+  wasPartial      Boolean     @default(false) @map("was_partial")
+  
+  // Timestamps
+  createdAt       DateTime    @default(now()) @map("created_at")
+
+  // Relations
+  workoutLog      WorkoutLog  @relation(fields: [workoutLogId], references: [id], onDelete: Cascade)
+  exercise        Exercise    @relation(fields: [exerciseId], references: [id])
+
+  @@map("set_logs")
+}
+
+/// Weekly check-in (fatigue, adherence, subjective metrics)
+model CheckInWeekly {
+  id              String      @id @default(uuid()) @db.Uuid
+  userId          String      @map("user_id") @db.Uuid
+  
+  weekNumber      Int         @map("week_number")
+  date            DateTime    @default(now())
+  
+  // Weight tracking
+  weightKg        Float?      @map("weight_kg")
+  weight7dAvg     Float?      @map("weight_7d_avg") // Calculated field
+  
+  // Body measurements (cm)
+  waistCm         Float?      @map("waist_cm")
+  hipsCm          Float?      @map("hips_cm")
+  chestCm         Float?      @map("chest_cm")
+  armLeftCm       Float?      @map("arm_left_cm")
+  armRightCm      Float?      @map("arm_right_cm")
+  thighLeftCm     Float?      @map("thigh_left_cm")
+  thighRightCm    Float?      @map("thigh_right_cm")
+  
+  // Subjective scores (1-10)
+  fatigueScore    Int?        @map("fatigue_score")
+  stressScore     Int?        @map("stress_score")
+  sleepQuality    Int?        @map("sleep_quality")
+  motivationScore Int?        @map("motivation_score")
+  hungerLevel     Int?        @map("hunger_level")
+  digestiveHealth Int?        @map("digestive_health")
+  
+  // Performance perception
+  strengthFeeling Int?        @map("strength_feeling") // 1-10
+  pumpQuality     Int?        @map("pump_quality") // 1-10
+  recoveryFeeling Int?        @map("recovery_feeling") // 1-10
+  
+  // Adherence (percentage 0-100)
+  trainingAdherence Int?      @map("training_adherence")
+  nutritionAdherence Int?     @map("nutrition_adherence")
+  sleepAdherence    Int?      @map("sleep_adherence")
+  stepsAdherence    Int?      @map("steps_adherence")
+  
+  // Calculated scores (computed by rule engine)
+  readinessScore    Float?    @map("readiness_score")
+  adherenceScore    Float?    @map("adherence_score")
+  deloadRecommended Boolean   @default(false) @map("deload_recommended")
+  deloadReasons     String[]  @map("deload_reasons") // Array of reason codes
+  
+  // Free text
+  wins              String?   // What went well
+  challenges        String?   // What was difficult
+  coachNotes        String?   @map("coach_notes")
+  
+  // Timestamps
+  createdAt         DateTime  @default(now()) @map("created_at")
+  updatedAt         DateTime  @updatedAt @map("updated_at")
+
+  // Relations
+  user              User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, weekNumber])
+  @@map("check_ins_weekly")
+}
+
+/// Daily metrics (weight, steps, sleep, energy)
+model MetricDaily {
+  id              String      @id @default(uuid()) @db.Uuid
+  userId          String      @map("user_id") @db.Uuid
+  
+  date            DateTime    @db.Date
+  
+  // Core metrics
+  weightKg        Float?      @map("weight_kg")
+  stepsCount      Int?        @map("steps_count")
+  sleepHours      Float?      @map("sleep_hours")
+  sleepQuality    Int?        @map("sleep_quality") // 1-10
+  
+  // Subjective scores (1-10)
+  energyLevel     Int?        @map("energy_level")
+  painScore       Int?        @map("pain_score") // 0-10 (0 = no pain)
+  stressLevel     Int?        @map("stress_level")
+  
+  // Nutrition (optional, minimal tracking)
+  proteinG        Int?        @map("protein_g")
+  caloriesKcal    Int?        @map("calories_kcal")
+  waterL          Float?      @map("water_l")
+  
+  // Notes
+  notes           String?
+  
+  // Timestamps
+  createdAt       DateTime    @default(now()) @map("created_at")
+  updatedAt       DateTime    @updatedAt @map("updated_at")
+
+  // Relations
+  user            User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, date])
+  @@map("metrics_daily")
+}
+
+/// Media uploads (progress photos, videos)
+model Media {
+  id              String      @id @default(uuid()) @db.Uuid
+  userId          String      @map("user_id") @db.Uuid
+  
+  // File info
+  fileName        String      @map("file_name")
+  fileType        MediaType   @map("file_type")
+  fileSize        Int         @map("file_size") // bytes
+  storagePath     String      @map("storage_path") // Supabase storage path
+  
+  // Metadata
+  capturedAt      DateTime    @map("captured_at")
+  tags            String[]    // e.g., ["front", "relaxed", "week-4"]
+  poseType        PoseType?   @map("pose_type")
+  
+  // Optional analysis (for future AI features)
+  bodyFatEstimate Float?      @map("body_fat_estimate")
+  confidence      Float?      // 0-1
+  analysisSource  String?     @map("analysis_source")
+  
+  // Notes
+  notes           String?
+  
+  // Timestamps
+  createdAt       DateTime    @default(now()) @map("created_at")
+  updatedAt       DateTime    @updatedAt @map("updated_at")
+
+  // Relations
+  user            User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("media")
+}
+
+// ============================================
+// ENUMS
+// ============================================
+
+enum GoalType {
+  RECOMPOSITION
+  FAT_LOSS
+  MUSCLE_GAIN
+  MAINTENANCE
+  PERFORMANCE
+}
+
+enum ExperienceLevel {
+  BEGINNER
+  INTERMEDIATE
+  ADVANCED
+  ELITE
+}
+
+enum PlanType {
+  MESOCYCLE
+  MICROCYCLE
+  DELOAD
+  TESTING
+}
+
+enum SessionType {
+  STRENGTH
+  HYPERTROPHY
+  CARDIO
+  HYBRID
+  RECOVERY
+  TESTING
+}
+
+enum ExerciseCategory {
+  COMPOUND
+  ISOLATION
+  MACHINE
+  BODYWEIGHT
+  CARDIO
+  MOBILITY
+}
+
+enum SetType {
+  WARMUP
+  ACTIVATION
+  WORKING
+  BACKOFF
+  DROPSET
+  MYOREP
+  AMRAP
+}
+
+enum MediaType {
+  PHOTO
+  VIDEO
+}
+
+enum PoseType {
+  FRONT_RELAXED
+  FRONT_FLEXED
+  SIDE_RELAXED
+  SIDE_FLEXED
+  BACK_RELAXED
+  BACK_FLEXED
+  CUSTOM
+}
