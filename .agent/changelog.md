@@ -1,32 +1,19 @@
-# Changelog - Elite Fitness Tracker MVP
+# Changelog
 
-## [0.1.0] - 2026-01-31
+## [Unreleased]
+
+### Fixed
+- **Prisma Configuration**: Resolved `PrismaClientConstructorValidationError` by migrating datasource URLs to `prisma.config.ts` and removing them from `schema.prisma`. Updated `PrismaClient` usage to match new configuration.
+- **UI Translation**: Translated the entire Diagnosis Module to Spanish, including:
+    - `DiagnosisPage` title and layout.
+    - `AssessmentForm` inputs, labels, and success/error alerts.
+    - `BioProfileChart` (Spider Chart) axis and labels.
+    - `DiagnosisResultView` profile types, mechanics predictions, and injury badges.
+    - `DiagnosisEngine` output strings for Squat Profile analysis.
+
+### Changed
+- **Dependencies**: Updated `prisma.config.ts` to use `DATABASE_POOL_URL` for main connection and `DATABASE_URL` for direct connection.
+- **Components**: Can now render Diagnosis results entirely in Spanish for a localized user experience.
 
 ### Added
-- **Prisma Schema** (`prisma/schema.prisma`)
-  - 9 entidades core: User, Profile, Plan, SessionTemplate, WorkoutLog, Exercise, SetLog, CheckInWeekly, MetricDaily, Media
-  - Enums: GoalType, ExperienceLevel, PlanType, SessionType, ExerciseCategory, SetType, MediaType, PoseType
-  - Campos calculados: weight_7d_avg, readinessScore, adherenceScore, deloadRecommended
-
-- **Supabase Integration**
-  - `src/lib/supabase/client.ts` - Browser client
-  - `src/lib/supabase/server.ts` - Server Components client
-  - `src/lib/supabase/middleware.ts` - Session refresh
-  - `src/middleware.ts` - Route protection
-
-- **Security**
-  - `supabase/rls-policies.sql` - RLS policies para todas las tablas
-  - Storage policies documentadas para bucket `progress-media`
-
-- **Configuration**
-  - `.env.local.example` - Template con placeholders
-  - `prisma/prisma.config.ts` - Prisma v7 config
-
-### Decisions
-- **Prisma v7**: Nueva estructura de config con `prisma.config.ts` en lugar de URLs en schema
-- **RLS by user_id**: Todas las tablas de datos personales filtran por `auth.uid() = user_id`
-- **Session templates**: Separación entre plan (template) y ejecución (log) para flexibilidad
-
-### Next
-- Conectar Supabase y ejecutar primera migración
-- Seed de ejercicios básicos
+- **Type Definitions**: Added `label` field to `SquatProfile` interface in `DiagnosisEngine` to support UI display needs.

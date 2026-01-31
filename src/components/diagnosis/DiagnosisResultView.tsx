@@ -17,6 +17,16 @@ export const DiagnosisResultView = () => {
 
     const footStability = DiagnosisEngine.analyzeFootStability(stability.navicularDrop);
 
+    const INJURY_LABELS: Record<string, string> = {
+        cervical: 'Cervical / Cuello',
+        shoulder: 'Hombro / Escápula',
+        elbow: 'Codo / Muñeca',
+        lumbar: 'Lumbar / Espalda Baja',
+        hip: 'Cadera / Glúteo',
+        knee: 'Rodilla',
+        ankle: 'Tobillo / Pie',
+    };
+
     return (
         <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
@@ -40,7 +50,7 @@ export const DiagnosisResultView = () => {
                             Perfil de Sentadilla
                         </h3>
                         <span className="px-3 py-1 rounded-full bg-blue-500 text-[10px] font-bold uppercase tracking-widest text-white">
-                            {squatProfile.type}
+                            {squatProfile.label}
                         </span>
                     </div>
                     <div className="space-y-4">
@@ -69,8 +79,8 @@ export const DiagnosisResultView = () => {
 
                 {/* Foot Stability Card */}
                 <div className={`p-6 rounded-2xl border ${footStability?.status === 'UNSTABLE_ARCH'
-                        ? 'bg-orange-500/5 border-orange-500/20'
-                        : 'bg-emerald-500/5 border-emerald-500/20'
+                    ? 'bg-orange-500/5 border-orange-500/20'
+                    : 'bg-emerald-500/5 border-emerald-500/20'
                     }`}>
                     <div className="flex items-center gap-3 mb-2">
                         {footStability?.status === 'UNSTABLE_ARCH'
@@ -99,7 +109,7 @@ export const DiagnosisResultView = () => {
                         <div className="flex flex-wrap gap-2">
                             {injuries.map((id) => (
                                 <span key={id} className="text-[10px] px-2 py-1 rounded bg-red-500/20 text-red-400 border border-red-500/20 font-bold uppercase">
-                                    {id}
+                                    {INJURY_LABELS[id] || id}
                                 </span>
                             ))}
                         </div>

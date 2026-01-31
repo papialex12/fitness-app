@@ -1,19 +1,8 @@
-# MasterMind Fitness
+# Perihelion Star - Análisis de Entrenamiento
 
-## 🚀 Vision
-A hyper-personalized fitness application that uses AI to synthesize scientific principles (from a Master's degree in personal training) with user-specific data to create the ultimate fat loss experience.
+Este proyecto está dedicado al análisis avanzado de los datos de entrenamiento de Alexa Aguirre, utilizando inteligencia artificial para extraer patrones biomecánicos, de rendimiento y de bienestar.
 
-## 🛠️ Stack
-- **Frontend**: Next.js 15 (App Router)
-- **Styling**: Tailwind CSS v4 + Framer Motion
-- **Database**: Supabase
-- **AI**: NotebookLM + Antigravity MCP
-
-## 📂 Structure
-- `/.agent`: Project automation rules and memory.
-- `/docs`: Live documentation and plans.
-- `/app`: Application code.
-
-## ⚡ Quick Start
-1. `npm install`
-2. `npm run dev`
+## Estructura
+- `/.agent/`: Memoria y reglas del asistente.
+- `/docs/`: Planes y documentación del análisis.
+- `README.md`: Este archivo.

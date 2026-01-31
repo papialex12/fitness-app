@@ -109,13 +109,13 @@ export async function submitCheckIn(data: CheckInFormData) {
                 sleepHoursAvg: 0,
                 readinessScore: 0,
             },
-        },
+
         })
 
-    revalidatePath('/dashboard')
-    return { success: true, checkInId: checkIn.id }
-} catch (error) {
-    console.error('Error submitting check-in:', error)
-    return { error: 'Failed to submit check-in' }
-}
+        revalidatePath('/dashboard')
+        return { success: true, checkInId: checkIn.id }
+    } catch (error) {
+        console.error('Error submitting check-in:', error)
+        return { error: 'Failed to submit check-in' }
+    }
 }

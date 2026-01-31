@@ -11,7 +11,7 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
+  provider  = "postgresql"
 }
 
 // ============================================
@@ -69,8 +69,43 @@ model Profile {
 
   // Relations
   user              User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  assessments       PhysicalAssessment[]
 
   @@map("profiles")
+}
+
+/// Biomechanical assessment data (Digital Twin source)
+model PhysicalAssessment {
+  id        String   @id @default(uuid()) @db.Uuid
+  profileId String   @map("profile_id") @db.Uuid
+  date      DateTime @default(now())
+
+  // Anthropometry
+  femurLengthCm Float? @map("femur_length_cm")
+  tibiaLengthCm Float? @map("tibia_length_cm")
+  torsoLengthCm Float? @map("torso_length_cm")
+  armSpanCm     Float? @map("arm_span_cm")
+  
+  // Mobility (Quantitative)
+  ankleDorsiflexionRightCm Float? @map("ankle_right_cm")
+  ankleDorsiflexionLeftCm  Float? @map("ankle_left_cm")
+  
+  hipInternalRotationRightDeg Int? @map("hip_ir_right_deg")
+  hipInternalRotationLeftDeg  Int? @map("hip_ir_left_deg")
+  
+  shoulderFlexionRightDeg Int? @map("shoulder_flex_right_deg")
+  shoulderFlexionLeftDeg  Int? @map("shoulder_flex_left_deg")
+
+  // Clinical Tests (Qualitative)
+  thomasTestRight String? @map("thomas_test_right") // PASS, TIGHT_PSOAS, TIGHT_QUAD
+  thomasTestLeft  String? @map("thomas_test_left")
+
+  notes           String?
+
+  createdAt DateTime @default(now()) @map("created_at")
+  profile   Profile  @relation(fields: [profileId], references: [id], onDelete: Cascade)
+
+  @@map("assessments")
 }
 
 /// Training plan (mesocycle/microcycle)
@@ -242,6 +277,7 @@ model CheckInWeekly {
   // Weight tracking
   weightKg        Float?      @map("weight_kg")
   weight7dAvg     Float?      @map("weight_7d_avg") // Calculated field
+  sleepHoursAvg   Float?      @map("sleep_hours_avg") // Calculated field
   
   // Body measurements (cm)
   waistCm         Float?      @map("waist_cm")

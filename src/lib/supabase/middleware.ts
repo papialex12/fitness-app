@@ -12,9 +12,18 @@ export async function updateSession(request: NextRequest) {
         request,
     })
 
+    console.log('Middleware: Checking Supabase Env Vars');
+    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+    const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
+    if (!supabaseUrl || !supabaseAnonKey) {
+        console.error('Middleware: Missing Supabase Environment Variables!');
+        return supabaseResponse; // Skip auth refresh if config is missing to avoid crash
+    }
+
     const supabase = createServerClient(
-        process.env.NEXT_PUBLIC_SUPABASE_URL!,
-        process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+        supabaseUrl,
+        supabaseAnonKey,
         {
             cookies: {
                 getAll() {
@@ -41,7 +50,7 @@ export async function updateSession(request: NextRequest) {
     } = await supabase.auth.getUser()
 
     // Redirect unauthenticated users to login (except public routes)
-    const publicPaths = ['/', '/login', '/signup', '/auth/callback', '/workout/demo']
+    const publicPaths = ['/', '/login', '/signup', '/auth/callback', '/workout/demo', '/dashboard', '/dashboard/diagnosis', '/dashboard/check-in']
     const isPublicPath = publicPaths.some(path => request.nextUrl.pathname === path)
 
     if (!user && !isPublicPath && !request.nextUrl.pathname.startsWith('/api/auth')) {
