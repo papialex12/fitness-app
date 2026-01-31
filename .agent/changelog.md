@@ -1,6 +1,13 @@
 # Changelog
 
-## [Unreleased]
+## [0.3.0] - 2026-02-03
+### Added
+- **Workout Logging (Module 3)**:
+    - Dedicated APIs for Exercises, Workouts, and Sets.
+    - `WorkoutSession` component for real-time tracking.
+    - Intra-session Feedback (Rule Engine v1) based on RPE.
+    - Dashboard navigation to new modules.
+- **Localization**: Full Spanish translation for Diagnosis and Workout modules.
 
 ### Fixed
 - **Prisma Configuration**: Resolved `PrismaClientConstructorValidationError` by migrating datasource URLs to `prisma.config.ts` and removing them from `schema.prisma`. Updated `PrismaClient` usage to match new configuration.

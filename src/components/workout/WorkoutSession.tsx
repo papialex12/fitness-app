@@ -208,7 +208,7 @@ export function WorkoutSession() {
                                     </div>
                                     <div className="text-right">
                                         <div className="font-mono text-lg">
-                                            {set.weight}kg x {set.reps}
+                                            {set.weightKg}kg x {set.reps}
                                         </div>
                                         {set.rpe && <div className="text-xs text-gray-400">RPE: {set.rpe}</div>}
                                     </div>

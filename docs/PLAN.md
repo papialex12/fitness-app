@@ -18,16 +18,19 @@
 - [x] **Ingesta de Datos**: Tests Biomecánicos (Thomas, Ankle, Femur/Torso) & Engine Logic.
 - [x] **Capa 1 (Filtro Estructural)**: Reglas estáticas (ej: "No Sentadilla Profunda si Acortamiento").
 
-### 🚀 M3: Workout Logging (Smart Logger) - NEXT PRIORITY
-- [ ] API `/api/workout` (CRUD sesiones y sets).
-- [ ] **Capa 3 (Autorregulación)**: Feedback intra-sesión (RPE > Target → Bajar carga).
-- [ ] UI: Logging rápido de series.
+### ✅ M3: Workout Logging (Smart Logger) - COMPLETED
+- [x] API `/api/workout` (CRUD sesiones y sets).
+- [x] **Capa 3 (Autorregulación)**: Feedback intra-sesión (RPE > Target → Bajar carga).
+- [x] UI: Logging rápido de series (WorkoutSession).
+- [x] **Localization**: Fully translated to Spanish.
 
-### 🔲 M4: Check-in & Readiness (Biomarkers)
+### 🚀 M4: Analytics & Progress - NEXT PRIORITY
+
+### 🔲 M5: Check-in & Readiness (Biomarkers)
 - [x] Formulario check-in semanal.
 - [ ] **Capa 2 (Readiness)**: Filtro diario. (Sueño < 6h → Ajuste Volumen).
 - [ ] Semáforo de Interferencia (Reloj AMPK/mTOR).
 
-### 🔲 M5: Export & Polish
+### 🔲 M6: Export & Polish
 - [ ] Export CSV/XLSX.
 - [ ] Upload fotos de progreso.8n.
